@@ -9,7 +9,7 @@ TLDR: Artificial Intelligence can be used to produce lots of visual ideas based 
 
 ## A chicken wearing sunglasses
 
-If you want to create a new logo for your company or a client, you may want to start experimenting with AI generated imagery. State fo the art AI is able to produce lots of material, pertinent to your vision, in a short time and low cost. Let's dive into an example.
+If you want to create a new logo for your company or a client, you may want to start experimenting with AI generated imagery. State of the art AI is able to produce lots of material, pertinent to your vision, in a short time and low cost. Let's dive into an example.
 
 Let's say I want to design a new logo for my [YouTube channel](https://www.youtube.com/channel/UCD-HLhRV_4Z3sYGkgqAnIJw) (italian only). It has to be minimal, with a few colors, easily recognizable for a strong brand. The mascotte of my channel is a chicken with sunglasses called Pollo Watzlawick. In the past I used these two depictions:
 
@@ -51,7 +51,7 @@ A vector logo is an exercise in minimalism. Here is how an AI can simplify yet r
 
 ![image](img/Screenshot%20from%202022-08-27%2003-44-35.png)
 
-Speaking about simplifying, I fell deeply in love with the sunglasses of this proposal. They are unapologetically borderline. Would you say they were sunglasses if you didn't know it beforehand?
+Speaking about simplifying, I fell deeply in love with the sunglasses of the following proposal. They are unapologetically borderline. Would you say they were sunglasses if you didn't know it beforehand?
 
 ![image](img/Screenshot%20from%202022-08-27%2003-49-01.png)
 
@@ -61,20 +61,20 @@ Sure, one can simplify to the point of exaggerating,
 
 ![image](img/Screenshot%20from%202022-08-27%2003-41-56.png)
 
-or add too many details like 1. reflection on sunglasses, 2. chickens inside the reflection on sunglasses, 3. a full blown sunset-sky-over-an-institutional-building reflection on sunglasses.
+or get carried away with details like 1. reflection on sunglasses, 2. chickens inside the reflection on sunglasses, 3. a full blown sunset-sky-over-an-institutional-building reflection on sunglasses.
 
 ![image](img/Screenshot%20from%202022-08-27%2004-12-40.png)
 
 
 ## Colors
 
-Somebody will write a book called "artificial color theory". Maybe GPT-3 itself. Please enjoy SD's mastery in dealing with 1. black and white, 2. small palette, 3. gradients and 4. shades of gray.
+Somebody will write a book called "artificial color theory". Maybe [GPT-3](https://arxiv.org/pdf/2005.14165) itself. Please enjoy SD's mastery in dealing with 1. black and white, 2. small B/W palette, 3. gradients and 4. shades of gray.
 
 ![image](img/Screenshot%20from%202022-08-27%2002-29-46.png)
 
 
 
-Stable Diffusion can be delicate with colors, using a palette coherent with the subject at hand, academically respecting the color wheel. It can go a little more creative, adding deviant colors or go in the other direction, simplifying while adding contrast. It can go full psychedelic. If you are a designer and still a non-believer while seeing this, I would be surprised.
+Stable Diffusion can be delicate with colors, using a palette coherent with the subject at hand, academically respecting the color wheel. It can go a little more creative, adding deviant colors or go in the other direction, using less but more contrasting colors It can go full psychedelic.
 
 ![image](img/Screenshot%20from%202022-08-27%2002-36-20.png)
 
@@ -106,7 +106,7 @@ Sometimes the proposal is embedded in the physical world, as a preview of its us
 
 ## Text and fonts
 
-Lots of images contain literal text from the prompt: you can easily read "chicken" and "design". Sometimes words are mispelled, sometimes there are other words, featuring letters from other alphabets or never seen before. Sometimes visual and texts are heavily melted. Also noteworthy are the variety of fonts and the overall compositions.
+Lots of images contain literal text from the prompt: you can easily read "chicken" and "design". Sometimes words are mispelled, featuring letters from other alphabets or never seen before. Sometimes visuals and texts are heavily melted. Also noteworthy are the variety of fonts and the overall compositions.
 
 ![image](img/Screenshot%20from%202022-08-27%2003-30-33.png)
 
@@ -120,7 +120,7 @@ I didn't finalize a logo yet, because I'm having too much fun. Since my freelanc
 
 My favourite is the one at the center. In the next post I will put it back into Stable Diffusion to let it hallucinate variations. Then I will bring the best proposal into a vector editing software and add elements I liked from other proposals and my personal taste. [Follow](https://www.linkedin.com/in/piero-savastano-523b3016) [me](https://twitter.com/_pieroit_) on [social media](https://www.youtube.com/channel/UCD-HLhRV_4Z3sYGkgqAnIJw) if you are interested in reading my experience, and ping me if you want to start a conversation.
 
-It should be evident how the AI regurgitates stuff found on the web, because it is trained on that exact material. Nobody can say at the moment how much it copies, not even the authors of the AI themselves. I argue we can't even tell how much human artists copy each other. Clearly this technology is going to impact the world of design, and many people will not like it... but you know, the beat goes on.
+It should be evident how the AI regurgitates stuff found on the web, because it is trained on that [exact material](https://laion.ai/). Nobody can say at the moment how much it copies, not even the authors of the AI themselves. **I argue we can't even tell how much human artists copy each other**. Clearly this technology is going to impact the world of design, and many people will not like it... but you know, the beat goes on.
 
 ![image](img/Screenshot%20from%202022-08-27%2014-37-42.png)
 
