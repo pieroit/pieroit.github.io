@@ -1,6 +1,6 @@
 ***
-# How to design your logo with AI 
-### with Stable Diffusion, Midjourney or DALLE2
+# Design your next logo with AI
+### (with Stable Diffusion, Midjourney or DALLE2)
 
 
 TLDR: Artificial Intelligence can be used to produce lots of visual ideas based on a brief (even if really vague). From those ideas you can select the best, combine them and create the logo of your dreams.
@@ -9,19 +9,21 @@ TLDR: Artificial Intelligence can be used to produce lots of visual ideas based 
 
 ## A chicken wearing sunglasses
 
-If you want to create a new logo for your company or a client, you may want to leverage Artificial Intelligence. State fo the art AI is able to produce images, lots of them, and pertinent to your vision, in a short time at a low cost. Let's dive into an example.
+If you want to create a new logo for your company or a client, you may want to start experimenting with AI generated imagery. State fo the art AI is able to produce lots of material, pertinent to your vision, in a short time and low cost. Let's dive into an example.
 
-Let's say I want to design a new logo for my YouTube channel (italian only). It has to be minimal, with a few colors, easily recognizable for a strong brand. The mascotte of my channel is a chicken with sunglasses called Pollo Watzlawick.
+Let's say I want to design a new logo for my [YouTube channel](https://www.youtube.com/channel/UCD-HLhRV_4Z3sYGkgqAnIJw) (italian only). It has to be minimal, with a few colors, easily recognizable for a strong brand. The mascotte of my channel is a chicken with sunglasses called Pollo Watzlawick. In the past I used these two depictions:
+
+![image](img/Screenshot%20from%202022-08-27%2014-56-47.png)
 
 ## Prompting the AI
 
-A good logo designer starts from a brief of his client, and goes on the interwebs researching material pertinent to the brief and some other ideas floating in his head. With AI the methodology is different: the brief itself, compressed in a single sentence, will be fed as a "prompt" to an AI. The AI will do most of the visual research for the designer. In our case the prompt will be:
+A professional logo designer starts from a brief of his client, and goes on the interwebs researching material pertinent to the brief and some other ideas floating in his head. With AI the methodology is different: the brief itself, compressed in a single sentence, will be fed as a "prompt" to an AI. The AI will do most of the visual research for the designer. In our case the prompt will be:
 
 > # *A chicken wearing sunglasses, designer logo, vector logo, award winning design, masterpiece, strong brand.*
 
-Why all those words? The prompt must be designed to push the AI in certain places (this will be the topic for another post). For now suffice to say that, starting from this sentence, the AI will generate hundreds of raw proposals in a short time. If the designer is not happy, the prompt can be changed to deepen the visual research phase.
+Why all those words? The prompt must be designed to push the AI in certain geometric places (this will be the topic for another post). For now suffice to say that, starting from this sentence, the AI will generate hundreds of raw proposals in a short time. If the designer is not happy, the prompt can be changed to deepen the visual research phase.
 
-The AI I use here is open source, is called Stable Diffusion (from now on SD). It's similar to other "hallucinating" AIs, like DALL-E2 and Midjourney.
+The AI I use here is open source, is called [Stable Diffusion](https://stability.ai/blog/stable-diffusion-public-release) (from now on SD). It's similar to other "hallucinating" AIs, like [DALL-E2](https://openai.com/dall-e-2/) and [Midjourney](https://www.midjourney.com/home/).
 
 I got 1000 (!!!) different outputs from SD. Here are some of them, a small sample displaying the variety of proposals:
 
@@ -110,13 +112,19 @@ Lots of images contain literal text from the prompt: you can easily read "chicke
 
 ## Conclusion
 
-Professional logo design just got less expensive. Prompt, selection, a few iterations, and final logo. Those images the AI throws at you are not going to be the final logo. But you can iterate on them and combine them into new ideas. The final result will be outstanding, and you can get there really fast.
+Professional logo design just got less expensive. Prompt, selection, a few iterations, a little editing and profit. Those images the AI throws at you are not going to be the final logo. But you can iterate on them and combine them into new ideas. The final result will be outstanding, and you can get there really fast.
 
 I didn't finalize a logo yet, because I'm having too much fun. Since my freelance activity is in AI I am more than interested in pushing the limits of Stable Diffusion as much possible. To stay on topic, I added to the prompt the words *robotic chicken, artificial intelligence, deep learning*. 
 
 ![image](img/Screenshot%20from%202022-08-27%2014-35-51.png)
 
+My favourite is the one at the center. In the next post I will put it back into Stable Diffusion to let it hallucinate variations. Then I will bring the best proposal into a vector editing software and add elements I liked from other proposals and my personal taste. [Follow](https://www.linkedin.com/in/piero-savastano-523b3016) [me](https://twitter.com/_pieroit_) on [social media](https://www.youtube.com/channel/UCD-HLhRV_4Z3sYGkgqAnIJw) if you are interested in reading my experience, and ping me if you want to start a conversation.
 
 It should be evident how the AI regurgitates stuff found on the web, because it is trained on that exact material. Nobody can say at the moment how much it copies, not even the authors of the AI themselves. I argue we can't even tell how much human artists copy each other. Clearly this technology is going to impact the world of design, and many people will not like it... but you know, the beat goes on.
 
 ![image](img/Screenshot%20from%202022-08-27%2014-37-42.png)
+
+
+
+
+
