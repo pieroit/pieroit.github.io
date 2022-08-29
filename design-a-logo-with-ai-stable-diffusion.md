@@ -1,6 +1,6 @@
 ***
 # AI is designing my new logo
-### (with Stable Diffusion, Midjourney or DALLE2)
+### (can be done with Stable Diffusion, Midjourney or DALLE2)
 
 
 TLDR: Artificial Intelligence can be used to produce lots of visual ideas based on a brief (even if really vague). From those ideas you can select the best, combine them and create the logo of your dreams.
