@@ -1,5 +1,5 @@
 ***
-# Design your next logo with AI
+# AI is designing my new logo
 ### (with Stable Diffusion, Midjourney or DALLE2)
 
 
