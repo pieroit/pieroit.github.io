@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
+    "build": "next build && touch ./docs/.nojekyll",
+    "start": "npx serve docs",
     "lint": "next lint"
   },
   "dependencies": {
