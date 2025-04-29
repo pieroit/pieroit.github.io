@@ -1,15 +1,21 @@
 //import Image from "next/image";
 import styles from "./page.module.css";
 
+export const metadata = {
+  title: 'Piero Savastano',
+  description: 'Piero Savastano - AI before it was cool',
+}
+
 export default function Home() {
 	return (
 		<div className={styles.page}>
+
 			<main className={styles.main}>
 				
 				<img
 					src="/piero2.jpg"
 					alt="Piero Savastano"
-					width={"100%"}
+					style={{ maxWidth: "100%", width: "600px" }}
 				/>
 
 				<h1>
