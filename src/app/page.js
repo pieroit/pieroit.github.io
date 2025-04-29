@@ -1,94 +1,73 @@
-import Image from "next/image";
+//import Image from "next/image";
 import styles from "./page.module.css";
 
 export default function Home() {
 	return (
 		<div className={styles.page}>
 			<main className={styles.main}>
-				<Image
-					className={styles.logo}
-					src="/next.svg"
-					alt="Next.js logo"
-					width={180}
-					height={38}
-					priority
+				
+				<img
+					src="/piero2.jpg"
+					alt="Piero Savastano"
+					width={"100%"}
 				/>
-				<ol>
-					<li>
-						Ciao sono Piero.
-					</li>
-					<li>Save and see your changes instantly.</li>
-				</ol>
 
+				<h1>
+					Piero Savastano
+				</h1>
+
+				<p>
+					Started as a young research scientist specialized on computational neuroscience, cognitive psychology, artificial life and artificial intelligence.
+					<br />
+					Ended up creating videos, maintaining an AI open source framework and consulting internationally on AI.
+				</p>
+
+				<h2>
+					Follow me
+				</h2>
 				<div className={styles.ctas}>
-					<a
-						className={styles.primary}
-						href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<Image
-							className={styles.logo}
-							src="/vercel.svg"
-							alt="Vercel logomark"
-							width={20}
-							height={20}
-						/>
-						Deploy now
+					<a className={styles.primary} href="https://www.linkedin.com/in/piero-savastano-523b3016/" target="_blank">
+						LinkedIn
 					</a>
-					<a
-						href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-						target="_blank"
-						rel="noopener noreferrer"
-						className={styles.secondary}
-					>
-						Read our docs
+					<a className={styles.primary} href="https://github.com/pieroit" target="_blank">
+						GitHub
+					</a>
+					<a className={styles.primary} href="https://www.youtube.com/@PieroSavastano" target="_blank">
+						YouTube
+					</a>
+					<a className={styles.primary} href="https://www.tiktok.com/@piero.savastano" target="_blank">
+						TikTok
 					</a>
 				</div>
+
+				<h2>
+					Projects
+				</h2>
+				<div className={styles.ctas}>
+					<a className={styles.primary} href="https://cheshirecat.ai" target="_blank">
+						Cheshire Cat AI
+					</a>
+					<a className={styles.primary} href="https://voxmachina.it" target="_blank">
+						Vox Machina Meetup
+					</a>
+				</div>
+
+				<h2>
+					Blog
+				</h2>
+				<div className={styles.ctas}>
+					<span>
+						<a className={styles.primary} target="_blank">
+							...coming soon
+						</a>
+					</span>
+				</div>
+
 			</main>
 			<footer className={styles.footer}>
-				<a
-					href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<Image
-						aria-hidden
-						src="/file.svg"
-						alt="File icon"
-						width={16}
-						height={16}
-					/>
-					Learn
-				</a>
-				<a
-					href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<Image
-						aria-hidden
-						src="/window.svg"
-						alt="Window icon"
-						width={16}
-						height={16}
-					/>
-					Examples
-				</a>
-				<a
-					href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<Image
-						aria-hidden
-						src="/globe.svg"
-						alt="Globe icon"
-						width={16}
-						height={16}
-					/>
-					Go to nextjs.org →
-				</a>
+				<small>
+					Copyright Piero Savastano {new Date().getFullYear()}
+				</small>
 			</footer>
 		</div>
 	);
