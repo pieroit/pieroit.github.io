@@ -3,16 +3,21 @@ import { Image } from 'astro:assets'
 import BlogCard from '@/components/BlogCard.astro'
 import Link from '@/components/Link.astro'
 import PageHead from '@/components/PageHead.astro'
+import ProjectCard from '@/components/ProjectCard.astro'
+
 import { buttonVariants } from '@/components/ui/button'
 import { SITE } from '@/consts'
 import Layout from '@/layouts/Layout.astro'
-import { getRecentPosts } from '@/lib/data-utils'
+import { getRecentPosts, getAllProjects } from '@/lib/data-utils'
 
 const blog = await getRecentPosts(SITE.featuredPostCount)
+const projects = await getAllProjects()
+
 ---
 
 <Layout>
   <PageHead slot="head" title="Home" />
+  
   <section>
       <div class="p-6 pt-0">
         <Image
@@ -30,6 +35,16 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
       </div>
     </div>
   </section>
+
+  <section class="flex flex-col gap-y-4">
+    <h2 class="text-2xl font-medium">Best Projects</h2>
+    <ul class="flex flex-col gap-y-4">
+      <div class="flex flex-col gap-4">
+        {projects.map((project) => <ProjectCard project={project} />)}
+      </div>
+    </ul>
+  </section>
+  
   <section class="flex flex-col gap-y-4">
     <h2 class="text-2xl font-medium">Latest posts</h2>
     <ul class="flex flex-col gap-y-4">
