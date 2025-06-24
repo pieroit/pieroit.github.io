@@ -1,0 +1,29 @@
+---
+import { Icon } from 'astro-icon/components'
+
+interface BenefitItem {
+    icon: string;
+    title: string;
+    description: string;
+}
+
+const { items } = Astro.props as { items: BenefitItem[] };
+---
+
+<div class="py-12 max-w-xl mx-auto">
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {items.map( (i: BenefitItem) => {
+            return (
+                <div class="flex items-center px-4 gap-6">
+                    <div>
+                        <Icon name={i.icon} class="size-16" />
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold">{i.title}</h3>
+                        <p class="text-gray-600 text-sm mt-1">{i.description}</p>
+                    </div>
+                </div>
+            )
+        })}
+    </div>
+</div>

@@ -1,0 +1,69 @@
+---
+import Benefits from '@/components/Benefits.astro'
+import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import CallToAction from '@/components/CallToAction.astro'
+import PageHead from '@/components/PageHead.astro'
+import Testimonials from '@/components/Testimonials.astro'
+import VideoEmbed from '@/components/VideoEmbed.astro'
+import Layout from '@/layouts/Layout.astro'
+---
+
+<Layout>
+  <PageHead slot="head" title="Public Speaking" />
+  <!--
+  <Breadcrumbs items={[{ label: 'Public Speaking', icon: 'lucide:mic' }]} />
+  -->
+
+  <section class="min-w-full">
+    <div class="prose mb-8">
+      <CallToAction
+        title="Let's engage your crowd"
+        description="Whether they're newcomers or established professionals, C-suites or blue collars. I'll get your message through, while they have fun, with a unique blend of tech expertise and storytelling."
+        cta="Get Quote"
+      />
+      
+      <Benefits
+      items={[
+        {
+          title: 'Host a Tech Influencer',
+          description:
+          "I'm a trusted face in AI, with a 10k+ following on TikTok / YouTube / LinkedIn.",
+          icon: 'lucide:youtube',
+        },
+        {
+          title: 'True AI Expertise',
+          description:
+          '20 years hands-on in the field. Your people will hear the true story.',
+          icon: 'lucide:bot',
+        },
+        {
+          title: 'Interactive',
+          description:
+          'High-energy delivery and live audience interaction, based on a long experience in Improv theatre.',
+          icon: 'lucide:drama',
+        },
+        {
+          title: 'Complex made Simple',
+          description:
+          'I demystify the toughest AI concepts, making them accessible, actionable, and memorable for everyone in the room.',
+          icon: 'lucide:lightbulb',
+        },
+      ]}
+      />
+      
+      <VideoEmbed
+        url="https://www.youtube.com/embed/vai0IvrKS-k?si=xCARLwj9UP9GU4FF"
+      />
+
+      <Testimonials />
+
+      <VideoEmbed url="https://www.youtube.com/embed/3l5b4VYBWfU?si=BzRO_cmGrrGIJrgc" />
+      
+      <CallToAction
+        title="I'll meet you"
+        cta="Get Quote"
+      />
+
+    </div>
+  </section>
+</Layout>

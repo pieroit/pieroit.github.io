@@ -13,17 +13,25 @@ export const SITE: Site = {
 
 export const NAV_LINKS: SocialLink[] = [
   {
+    href: '/speaking',
+    label: 'Public Speaking',
+  },
+  {
+    href: '/training',
+    label: 'Training',
+  },
+  {
+    href: '/consulting',
+    label: 'Consulting',
+  },
+  {
     href: '/blog',
     label: 'blog',
   },
   /*{
-    href: '/authors',
-    label: 'authors',
-  },*/
-  {
     href: '/about',
     label: 'about',
-  },
+  },*/
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
@@ -47,10 +55,10 @@ export const SOCIAL_LINKS: SocialLink[] = [
     href: 'mailto:piero.savastano@gmail.com',
     label: 'Email',
   },
-  {
+  /*{
     href: '/rss.xml',
     label: 'RSS',
-  },
+  },*/
 ]
 
 export const ICON_MAP: IconMap = {
@@ -58,7 +66,7 @@ export const ICON_MAP: IconMap = {
   GitHub: 'lucide:github',
   LinkedIn: 'lucide:linkedin',
   YouTube: 'lucide:youtube',
-  TikTok: 'lucide:youtube',
+  TikTok: 'lucide:square-play',
   Twitter: 'lucide:twitter',
   Email: 'lucide:mail',
   RSS: 'lucide:rss',

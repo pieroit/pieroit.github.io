@@ -1,4 +1,4 @@
-import{j as n,c as t}from"./index.NY1cxoVm.js";import"./index.DK0mN5n4.js";import{c,b as p}from"./button.CvKbn7kc.js";/**
+import{j as n,c as t}from"./index.NY1cxoVm.js";import"./index.DK0mN5n4.js";import{c,b as p}from"./button.CaNAyHTH.js";/**
  * @license lucide-react v0.469.0 - ISC
  *
  * This source code is licensed under the ISC license.

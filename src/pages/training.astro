@@ -1,0 +1,74 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import Link from '@/components/Link.astro'
+import PageHead from '@/components/PageHead.astro'
+import CallToAction from '@/components/CallToAction.astro'
+import Benefits from '@/components/Benefits.astro'
+import Testimonials from '@/components/Testimonials.astro'
+import VideoEmbed from '@/components/VideoEmbed.astro'
+
+
+
+---
+
+<Layout>
+  <PageHead slot="head" title="Training" />
+  <!--
+  <Breadcrumbs items={[{ label: 'Training', icon: 'lucide:graduation-cap' }]} />
+  -->
+
+  <section class="min-w-full">
+    <div class="prose mb-8">
+
+      <CallToAction
+        title="Learn from the best"
+        description="Boost your team's skills by learning AI from an insider. Hands-on approach, with an eye on product and respecting solid scientific roots."
+        cta="Get Quote"
+      />
+
+      <!--
+      <Benefits 
+      items={[
+        {
+          title: "Stop bullshit",
+          description: "sdn  dfa sdf asdfasdfasdf afds asd fa sdf as fasdf",
+          icon: "lucide:mic",
+        },
+        {
+          title: "Improv",
+          description: "With more than 20 years of experience in Artificial Intelligence and a long practice in Improv Theatre, I bring to your event a unique blend of technical insight and dynamic storytelling.",
+          icon: "lucide:drama",
+        },
+        {
+          title: "Experience",
+          description: "I have delivered talks at conferences, workshops, meetups, spontaneous gatherings, locally and internationally. If you need to make your event both insightful and lighthearted, get in touch.",
+          icon: "lucide:map-pin-check-inside",
+        },
+        {
+          title: "Experience",
+          description: "I have delivered talks at conferences, workshops, meetups, spontaneous gatherings, locally and internationally. If you need to make your event both insightful and lighthearted, get in touch.",
+          icon: "lucide:map-pin-check-inside",
+        }   
+      ]}
+      />
+      -->
+      
+      <VideoEmbed
+        url="https://www.youtube.com/embed/r5lpvA5R7AA?si=45O4UDrv3IxOrxFU"
+      />
+      
+      <Testimonials />
+      
+      <VideoEmbed
+        url="https://www.youtube.com/embed/E1EGj7k0o88?si=VZMLhm73veJry8vi"
+      />
+
+      <CallToAction
+        title="Learn and grow"
+        cta="Get Quote"
+      />
+
+    </div>
+  </section>
+</Layout>

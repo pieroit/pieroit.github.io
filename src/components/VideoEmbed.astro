@@ -1,0 +1,30 @@
+---
+const { url } = Astro.props
+const isYoutube = url.includes("youtube")
+const isTiktok = url.includes("tiktok")
+---
+
+<div class="flex justify-center py-12">
+    { isYoutube && <iframe
+        class=""
+        width="560"
+        height="315"
+        src={url}
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
+    }
+    { isTiktok && <blockquote
+        class="tiktok-embed"
+        cite={url}
+        data-video-id={url.split("/").at(-1)}
+        style="max-width: 605px;min-width: 325px;"
+      >
+        <section>
+        </section>
+      </blockquote>
+      <script async src="https://www.tiktok.com/embed.js"></script>
+    }
+</div>
