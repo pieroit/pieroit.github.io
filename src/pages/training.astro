@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import Layout from '@/layouts/Layout.astro'
 import Breadcrumbs from '@/components/Breadcrumbs.astro'
 import Link from '@/components/Link.astro'
@@ -22,37 +23,43 @@ import VideoEmbed from '@/components/VideoEmbed.astro'
     <div class="prose mb-8">
 
       <CallToAction
-        title="Learn from the best"
+        title="Want to build AI agents?"
         description="Boost your team's skills by learning AI from an insider. Hands-on approach, with an eye on product and respecting solid scientific roots."
         cta="Get Quote"
       />
 
-      <!--
+      <Image
+        src={'/static/collage_public_speaking.png'}
+        alt={'Collage Piero Public Speaking and Training'}
+        width={1280}
+        height={720}
+        class="object-cover"
+      />
+
       <Benefits 
       items={[
         {
-          title: "Stop bullshit",
-          description: "sdn  dfa sdf asdfasdfasdf afds asd fa sdf as fasdf",
-          icon: "lucide:mic",
+          title: "Stay ahead of the curve",
+          description: "Most people just talk about AI, I'll get you started for real. Courses available for devs and executives.",
+          icon: "lucide:fast-forward",
         },
         {
-          title: "Improv",
-          description: "With more than 20 years of experience in Artificial Intelligence and a long practice in Improv Theatre, I bring to your event a unique blend of technical insight and dynamic storytelling.",
-          icon: "lucide:drama",
+          title: "Hands-on approach",
+          description: "Learn by doing, with an eye on product and respecting science.",
+          icon: "lucide:pocket-knife",
         },
         {
-          title: "Experience",
-          description: "I have delivered talks at conferences, workshops, meetups, spontaneous gatherings, locally and internationally. If you need to make your event both insightful and lighthearted, get in touch.",
-          icon: "lucide:map-pin-check-inside",
+          title: "Deep Knowledge",
+          description: "Unlock both theory and use cases, market trends, protocols (MCP, A2A), architectures, agents.",
+          icon: "lucide:microscope",
         },
         {
-          title: "Experience",
-          description: "I have delivered talks at conferences, workshops, meetups, spontaneous gatherings, locally and internationally. If you need to make your event both insightful and lighthearted, get in touch.",
-          icon: "lucide:map-pin-check-inside",
-        }   
+          title: "Open Source",
+          description: "Practice on well established open source frameworks, like the Cheshire Cat AI. No vendor lock-in.",
+          icon: "lucide:code-xml",
+        } 
       ]}
       />
-      -->
       
       <VideoEmbed
         url="https://www.youtube.com/embed/r5lpvA5R7AA?si=45O4UDrv3IxOrxFU"
@@ -65,7 +72,7 @@ import VideoEmbed from '@/components/VideoEmbed.astro'
       />
 
       <CallToAction
-        title="Learn and grow"
+        title="Learn AI from an insider"
         cta="Get Quote"
       />
 

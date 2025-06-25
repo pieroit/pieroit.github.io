@@ -1,34 +1,47 @@
 ---
+import Carousel from '@/components/ui/carousel.jsx'
 
 const items = [
     {
-        url: "",
-        alt: "Sony CSL",
+        url: 'sonycsl.png',
+        alt: 'Sony CSL',
     },
     {
-        url: "",
-        alt: "",
+        url: 'greenpeace.png',
+        alt: 'GreenPeace',
     },
     {
-        url: "",
-        alt: "",
+        url: 'linux_day.png',
+        alt: 'Linux Day',
     },
     {
-        url: "",
-        alt: "",
-    }
+        url: 'tedx.png',
+        alt: 'TedX',
+    },
+    {
+        url: 'codemotion.png',
+        alt: 'Codemotion',
+    },
+    {
+        url: 'cnr.png',
+        alt: 'Italian National Research Council',
+    },
+    {
+        url: 'cheshirecatai.png',
+        alt: 'Cheshire Cat AI',
+    },
 ]
+
+const settings = {
+    infinite: true, // enables infinite loop
+    speed: 5000, // long transition duration for smoothness
+    autoplay: true, // enable auto-scrolling
+    autoplaySpeed: 0, // no delay between scrolls
+    cssEase: 'linear', // linear easing for constant speed
+    slidesToShow: 1, // number of slides visible at once
+    slidesToScroll: 1, // scroll one slide at a time
+    variableWidth: true, // optional: allows slides to have different widths
+}
 ---
 
-<div class="py-12 px-6 text-center max-w-xl mx-auto">
-    <!--
-    <h3>Trusted by</h3>
-    <div>
-        {items.map( i => {
-            return (
-                <img src={i.url} alt={i.alt} />
-            )
-        })}
-    </div>
-    -->
-</div>
+<Carousel client:only="react" items={items} settings={settings} />

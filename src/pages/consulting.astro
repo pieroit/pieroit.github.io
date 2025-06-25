@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import Layout from '@/layouts/Layout.astro'
 import Breadcrumbs from '@/components/Breadcrumbs.astro'
 import Link from '@/components/Link.astro'
@@ -20,9 +21,17 @@ import VideoEmbed from '@/components/VideoEmbed.astro'
     <div class="prose mb-8">
 
       <CallToAction
-        title="A.I. sounds messy?"
+        title="AI sounds messy?"
         description="Get a clear view on the AI landscape, what it means for your company, and how to navigate it successfully."
         cta="Book a Call"
+      />
+
+      <Image
+        src={'/static/collage_public_speaking.png'}
+        alt={'Collage Piero Public Speaking and Training'}
+        width={1280}
+        height={720}
+        class="object-cover"
       />
 
       <!--
@@ -57,6 +66,10 @@ import VideoEmbed from '@/components/VideoEmbed.astro'
       />
 
       <Testimonials />
+      
+      <VideoEmbed
+        url="https://www.youtube.com/embed/Raz4RcI_qBg?si=bBRGWzuCJwb6IBES"
+      />
 
       <CallToAction
         title="Let's have a chat"
