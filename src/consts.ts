@@ -11,6 +11,12 @@ export const SITE: Site = {
   postsPerPage: 5,
 }
 
+// Google Form inquiry links, one per service so notifications are self-tagging.
+export const CONTACT_FORMS = {
+  speaking: 'https://forms.gle/Cmttgx5wKD83i4HB7',
+  training: 'https://forms.gle/5KWrUuQJniJZsQuu5',
+}
+
 export const NAV_LINKS: SocialLink[] = [
   {
     href: '/speaking',
@@ -19,10 +25,6 @@ export const NAV_LINKS: SocialLink[] = [
   {
     href: '/training',
     label: 'Training',
-  },
-  {
-    href: '/consulting',
-    label: 'Consulting',
   },
   {
     href: '/blog',

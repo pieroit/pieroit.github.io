@@ -7,6 +7,7 @@ import PageHead from '@/components/PageHead.astro'
 import Testimonials from '@/components/Testimonials.astro'
 import VideoEmbed from '@/components/VideoEmbed.astro'
 import Layout from '@/layouts/Layout.astro'
+import { CONTACT_FORMS } from '@/consts'
 ---
 
 <Layout>
@@ -21,6 +22,7 @@ import Layout from '@/layouts/Layout.astro'
         title="Let's engage your crowd"
         description="Whether they're newcomers or established professionals, C-suites or blue collars. I'll get the message through, while they have fun, with a unique blend of tech expertise and storytelling."
         cta="Get Quote"
+        href={CONTACT_FORMS.speaking}
       />
 
       <Image
@@ -71,6 +73,7 @@ import Layout from '@/layouts/Layout.astro'
       <CallToAction
         title="See you at the venue"
         cta="Get Quote"
+        href={CONTACT_FORMS.speaking}
       />
 
     </div>
