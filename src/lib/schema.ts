@@ -5,7 +5,7 @@ import type { CollectionEntry } from 'astro:content'
 // references this @id so search engines collapse them into one graph node.
 export const PERSON_ID = `${SITE.href}/#piero`
 
-/** The Person node describing Piero — reused on the home page and every post. */
+/** The Person node describing Piero - reused on the home page and every post. */
 export function personSchema() {
   return {
     '@type': 'Person',

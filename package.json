@@ -42,6 +42,7 @@
     "remark-emoji": "^5.0.1",
     "remark-math": "^6.0.0",
     "remark-sectionize": "^2.1.0",
+    "sharp": "^0.35.3",
     "tailwind-merge": "^3.0.1",
     "tailwindcss": "^4.0.7",
     "typescript": "^5.7.3"
@@ -52,6 +53,13 @@
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-astro-organize-imports": "^0.4.11",
     "prettier-plugin-tailwindcss": "^0.6.11"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp",
+      "esbuild",
+      "@tailwindcss/oxide"
+    ]
   },
   "prettier": {
     "semi": false,

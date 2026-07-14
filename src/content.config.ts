@@ -16,7 +16,7 @@ const blog = defineCollection({
       // VideoObject JSON-LD (src/lib/schema.ts) and the "already published"
       // dedup check in scripts/fetch-transcript.mjs.
       videoId: z.string().optional(),
-      // ISO 8601 duration, e.g. 'PT12M30S' — used by the VideoObject schema.
+      // ISO 8601 duration, e.g. 'PT12M30S' - used by the VideoObject schema.
       duration: z.string().optional(),
     }),
 })
