@@ -1,38 +1,46 @@
 ---
-import { Image } from 'astro:assets'
 import BlogCard from '@/components/BlogCard.astro'
 import Link from '@/components/Link.astro'
 import PageHead from '@/components/PageHead.astro'
 import ProjectCard from '@/components/ProjectCard.astro'
+import { Image } from 'astro:assets'
 
 import { buttonVariants } from '@/components/ui/button'
 import { SITE } from '@/consts'
 import Layout from '@/layouts/Layout.astro'
-import { getRecentPosts, getAllProjects } from '@/lib/data-utils'
+import { getAllProjects, getRecentPosts } from '@/lib/data-utils'
+import { profileGraph } from '@/lib/schema'
 
 const blog = await getRecentPosts(SITE.featuredPostCount)
 const projects = await getAllProjects()
-
 ---
 
 <Layout>
   <PageHead slot="head" title="Home" />
-  
+  <script
+    slot="head"
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(profileGraph())}
+  />
+
   <section>
-      <div class="p-6 pt-0">
-        <Image
-          src={'/static/collage_public_speaking.png'}
-          alt={'Collage Piero Public Speaking and Training'}
-          width={1280}
-          height={720}
-          class="object-cover"
-        />
-        <p class="text-muted-foreground mt-8 mb-2 text-sm">
-          Started as a young research scientist specialized on computational neuroscience, cognitive psychology, artificial life and artificial intelligence.
-          <br><br>
-          Ended up creating videos, maintaining an AI open source framework and consulting internationally on AI.
-        </p>
-      </div>
+    <div class="p-6 pt-0">
+      <Image
+        src={'/static/collage_public_speaking.png'}
+        alt={'Collage Piero Public Speaking and Training'}
+        width={1280}
+        height={720}
+        class="object-cover"
+      />
+      <p class="text-muted-foreground mt-8 mb-2 text-sm">
+        Started as a young research scientist specialized on computational
+        neuroscience, cognitive psychology, artificial life and artificial
+        intelligence.
+        <br /><br />
+        Ended up creating videos, maintaining an AI open source framework and consulting
+        internationally on AI.
+      </p>
     </div>
   </section>
 
@@ -44,7 +52,7 @@ const projects = await getAllProjects()
       </div>
     </ul>
   </section>
-  
+
   <section class="flex flex-col gap-y-4">
     <h2 class="text-2xl font-medium">Latest posts</h2>
     <ul class="flex flex-col gap-y-4">

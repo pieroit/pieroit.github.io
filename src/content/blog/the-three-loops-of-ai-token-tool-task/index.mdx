@@ -1,0 +1,44 @@
+---
+title: 'The 3 Loops of AI: Token, Tool, and Task'
+description: 'The word "loop" gets thrown around a lot in AI — but there are at least three nested ones, from single tokens up to whole tasks.'
+date: 2026-06-10
+tags: ['agents', 'context-engineering', 'llm', 'mcp']
+image: './cover.jpg'
+videoId: 'ISuaBWoppIQ'
+duration: 'PT3M2S'
+authors: ['pieroit']
+---
+
+import VideoEmbed from '@/components/VideoEmbed.astro'
+
+<VideoEmbed url="https://www.youtube.com/embed/ISuaBWoppIQ" />
+
+If you have ended up in a loop with artificial intelligence, here are three different meanings of the word "loop." Lately everyone talks about loops — AI in a loop, people in a loop — but when it comes to AI there are at least three distinct loops. Let's start from the lowest level and work our way up.
+
+## The token loop
+
+The first loop is the one over **tokens**: the famous context. This is where all the buzzwords live — context engineering, context window, context length, context rot.
+
+The context is a string that gets tokenized. It contains the conversation, any additional information, the descriptions of your tools — in short, everything the language model needs in order to produce the next token. The string goes in, the language model produces a token, and that token is appended back to the initial context. And around it goes again. That is the lowest-level loop.
+
+We talk so much about context because the language model is **stateless**. It has no memory of its own. It has a memory of its training data — so it knows that Paris is in France — but it does not know that _you_ like pineapple on your pizza. That kind of information is what you have to put in the context: the up-to-date or personal details it needs to produce useful tokens. That is the first loop.
+
+## The tool loop
+
+The second loop, one level up, is the **agentic loop**.
+
+Here the language model is allowed to output not only the token-by-token stream of ordinary text, but also **structured data** that says which function it wants to call and which arguments to pass to it — chosen from a set of functions it finds described in its context. These are the famous **tools**, and this is also where **MCP (Model Context Protocol)** comes from, as a way to expose remote tools.
+
+For example, the context might say: "Satisfy the user's requests. To do so you also have these tools available — turn on the light, set the temperature to a given number of degrees." The language model can then decide, it can make the call to fire off external routines, and that is the agentic loop moving forward.
+
+If you have used **Claude Code**, those little green dots you see scrolling by while it works — those are all tool calls.
+
+## The task loop
+
+The third cycle, the widest one, is a loop in which an entire agentic execution is just a single step.
+
+Here you assign a **task** — a high-level prompt — to the agent and you say: "Keep going until you verify this condition. To check it, you have to run this program, or this tool." The agent starts doing its thing, and when it thinks it is done it tries to verify the result. If it does not pass, it keeps going.
+
+So there you have it: a loop over **tokens**, a loop over **tools**, and a high-level loop over the execution of the whole **task**.
+
+I cover all of this with interactive graphics in my corporate course, **Reskill**. I am taking bookings for November–December.

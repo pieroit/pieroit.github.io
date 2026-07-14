@@ -1,0 +1,76 @@
+---
+title: 'Already Out of Tokens?'
+description: 'Why usage of non-American models is exploding, what you actually save, and the catch nobody mentions.'
+date: 2026-07-07
+tags: ['llm', 'open-models', 'cost', 'claude']
+image: './cover.jpg'
+videoId: 'rnbuOVLc-Hw'
+duration: 'PT2M36S'
+authors: ['pieroit']
+---
+
+import VideoEmbed from '@/components/VideoEmbed.astro'
+
+<VideoEmbed url="https://www.youtube.com/embed/rnbuOVLc-Hw" />
+
+So you've burned through your AI tokens again, and now you're sitting there
+waiting for them to unlock. That whole dance — the rate limits, the waiting, the
+paying more to wait less — is a big part of why everyone is drifting toward
+Chinese models. Everyone except you, of course.
+
+## The numbers are moving fast
+
+Let me show you a chart. This one comes from OpenRouter, an aggregator that
+gives you access to both Western and Asian models through their APIs — so you
+pay purely per usage.
+
+Last year, non-American models accounted for about **10%** of usage on
+OpenRouter. This year that figure has climbed to **40%**.
+
+And then there's the price. Compared to the top of the range — Anthropic's
+models — the Chinese models in the same tier cost a quarter of the price. Half
+of half.
+
+The usual objection is privacy: "I trust the Americans more." Do you, though? At
+this point you've already handed all your data to the Americans, so you might as
+well give it to the Chinese too and let them fight it out. What do you care?
+
+## What this actually means in practice
+
+The Chinese open models — whether you use them through an API or run them
+locally — enable a strategy the closed vendors don't.
+
+- **Start on the cloud.** You're up and running immediately, and it costs very
+  little.
+- **Move in-house later if you want.** Because these models are open, you can
+  eventually bring them home with a local setup. That comes with its own
+  headaches, but the _option_ exists.
+
+That's the key point: closed vendors like OpenAI and Anthropic simply don't let
+you make this move. With open models you keep the exit door open.
+
+## The catch: performance
+
+People say the high-end Chinese models are on par with the Western ones. That's
+not really true — especially compared to Anthropic.
+
+Here's a concrete example. The subtitles you see in my videos are generated
+through a set of **skills**, and inside those skills are scripts that do a whole
+chain of things. Setting that up with Claude was immediate. It barely made any
+mistakes, and it worked the moment I stood it up.
+
+Doing the exact same thing with the high-end Chinese models — I tried both a
+top-tier one and GLM — I had to rewrite all the skills and all the scripts, make
+them far more explicit, far easier to follow, so the underlying language model
+could actually get the work done.
+
+## So what do you choose?
+
+It comes down to two postures:
+
+- **Pay more, stay lazy.** Sit back on the couch, belly out, and let the premium
+  model handle everything.
+- **Pay less, roll up your sleeves.** Use the Chinese models, save a fortune, but
+  do the extra work to make them behave.
+
+Send this video to a friend who's going through token withdrawal. Bella regà.

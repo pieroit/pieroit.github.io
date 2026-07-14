@@ -1,5 +1,6 @@
 ---
 import { SITE } from '@/consts'
+import { postGraph } from '@/lib/schema'
 import type { CollectionEntry } from 'astro:content'
 
 interface Props {
@@ -48,3 +49,9 @@ const author = post.data.authors ? post.data.authors.join(', ') : SITE.author
       return <meta property="article:tag" content={tag} />
     })
 }
+
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify(postGraph(post, Astro.url.href))}
+/>

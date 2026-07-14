@@ -1,0 +1,58 @@
+---
+title: 'Fable 5 and Agents in a Loop'
+description: 'Fable 5 finally ships, and top agent builders now write loops instead of prompts — at a steep token cost.'
+date: 2026-06-09
+tags: ['fable', 'agents', 'llm']
+image: './cover.jpg'
+videoId: 'TcZCgTAIPPE'
+duration: 'PT4M34S'
+authors: ['pieroit']
+---
+
+import VideoEmbed from '@/components/VideoEmbed.astro'
+
+<VideoEmbed url="https://www.youtube.com/embed/TcZCgTAIPPE" />
+
+There are two big pieces of AI hype today — and lately the hype is a daily affair, not a weekly one anymore.
+
+## Fable 5 finally ships
+
+The first is the release of **Fable 5**, which is essentially the open-to-everyone version of the famous **Mythos**. Fable 5 closes out the whole overblown Mythos saga — the "it's too dangerous, we can't release it" narrative.
+
+In reality it was simply a model too heavy to release to everyone at once. On top of that it was more capable on things like biological weapons, so there was genuinely a safety component that needed sorting out. So they released it in preview, added guardrails and blocks to keep it from talking about certain topics, and now we have this Fable that costs twice as much as **Opus**. A lot of fuss over not much — more powerful, sure.
+
+But this is exactly in line with what we expected from the scaling laws. As time goes on, boosting these models' capabilities takes exponentially more resources. It's a bit like Bitcoin halving: these are the kinds of curves that logarithms were literally invented to describe.
+
+Anyway, Fable is out now. Try it and tell me whether it was really so dangerous that it justified all this drama.
+
+## "I don't write prompts anymore, I write loops"
+
+The second piece of hype comes from the people at the top of the agent world. Cerny — the creator of **Claude Code** — and Steinberger, the creator of Open Claw, almost in sync posted claims along the lines of: _"I don't write prompts anymore, I write the loops for my agent."_
+
+Social media immediately scrambled to figure out what that actually means. Here's what they mean: they've moved up another level of automation. Instead of holding conversations with their agents, they assign **tasks**, and then the agents go into a so-called **loop**, trying to complete the task — but with a validation piece attached that lets them measure whether the goal was reached.
+
+For example:
+
+- Running the tests, if they're coding.
+- Doing other kinds of verification.
+- Spawning sub-agents to do the work.
+
+And these agents are, as people now say, **async** — designed to keep running for hours while you do something else. It's not a continuous chat. It's not just agentic; it's async and long-running. You mostly orchestrate the final result: what you want and how it should be verified. You concern yourself less and less with _how_ the agents actually get things done.
+
+## Read it alongside the IPOs
+
+I think this needs to be read in the context of **Anthropic** and **OpenAI**, of the IPOs that are coming, of these companies going public.
+
+The fact that these figures now step out and tell you "the new best way to do things is these loops" conveniently skips over one detail: the amount you spend in **tokens** to do that is at least an order of magnitude higher. There are people who hesitate over a subscription of a few tens of euros a month — and here we're talking tens of euros a _day_, if not hundreds of euros a day. Leaving an agent like this running for hours means it burns through tokens fast.
+
+So this is partly an invitation to use more tokens, partly a way of saying "we're ahead," and partly — and this is the interesting part to me — a way of showing that we're abstracting further and further away.
+
+## The interesting, uncomfortable part
+
+As AI becomes more autonomous and does more interesting things, notice that the cost climbs right alongside it.
+
+This is something some AI thinkers and critics had already predicted: that over time we'd see tiers of usage form — almost like social classes _within_ the technology. The more access you have to AI, the more you can afford the automations that accelerate the economic and social gap between you and everyone else.
+
+And that is a heavy blow.
+
+Share this video with a friend who fell for the Mythos hype.

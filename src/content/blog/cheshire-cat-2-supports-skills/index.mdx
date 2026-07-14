@@ -1,0 +1,55 @@
+---
+title: 'Cheshire Cat 2 Supports Skills'
+description: 'A 20-minute experiment giving the Cheshire Cat 2 framework agent skills — and the open questions about MCP and safety.'
+date: 2026-06-22
+tags: ['cheshire-cat', 'skills', 'agents', 'mcp']
+image: './cover.jpg'
+videoId: 'fE3XO4ygVoI'
+duration: 'PT1M47S'
+authors: ['pieroit']
+---
+
+import VideoEmbed from '@/components/VideoEmbed.astro'
+
+<VideoEmbed url="https://www.youtube.com/embed/fE3XO4ygVoI" />
+
+Today I had a blast — I felt like a kid again. I've been playing with version two
+of the **Cheshire Cat**, building a few little things that will eventually turn
+into plugins, tutorials, and shared learning moments.
+
+## Skills inside the Cheshire Cat in 20 minutes
+
+The idea for today was simple: can I use the new version to write a plugin that
+gives the Cheshire Cat **skills**? The kind you drop into whatever folder you
+like, loaded according to your own logic. And it worked. In about 20 minutes,
+**Cheshire Cat 2** had skills up and running — it read the `skill.md`, executed
+the scripts, and did what it was told, on command.
+
+Clearly this is a bit risky. Skills are wonderfully convenient, but — as you well
+know — they mean the agent has direct access to the terminal. That's the trade-off
+you're signing up for.
+
+There's also a different flavor of skill I came across, for cases where you'd
+rather not use MCP at all. You give the agent the skill's markdown file, let it
+read it from the skill folder, and that's it — but the moment you want it to
+_execute_ something, those actions have to be exposed as proper tools. That's an
+interesting approach too.
+
+## MCP: postponed on purpose
+
+I'm holding off on the MCP (Model Context Protocol) integration for now. I want to
+wait for the explicit release of the protocol version due on July 28, which I'm
+looking forward to with real anticipation.
+
+After that, we'll figure out how MCP servers should actually be configured inside
+the Cheshire Cat, and that raises some genuinely tricky design questions:
+
+- Who adds the servers — the administrator?
+- Who filters them, and can the user filter them too?
+- Do they belong to the agent, or to the user?
+
+None of these are easy calls. Getting the ownership and permission model right is
+half the work.
+
+That's it for today — the power actually went out on me mid-session. Take care,
+everyone.

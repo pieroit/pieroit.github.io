@@ -1,0 +1,151 @@
+---
+title: 'The Truth About Fable, After the Ban'
+description: 'The Mythos-to-Fable hype cycle, the ban, and the compute economics that quietly make these models dumber.'
+date: 2026-07-03
+tags: ['ai', 'anthropic', 'llm', 'surveillance']
+image: './cover.jpg'
+videoId: 'Gaxjp8kkvuo'
+duration: 'PT10M26S'
+authors: ['pieroit']
+---
+
+import VideoEmbed from '@/components/VideoEmbed.astro'
+
+<VideoEmbed url="https://www.youtube.com/embed/Gaxjp8kkvuo" />
+
+Well, Fable is back. Nerfed, obviously. Let me walk you through the timeline of
+this whole hype circus around Mythos and then Fable, because we have seen this
+movie before, more than once, and every single time we fall for it. Every time
+the hype, every time the nonsense.
+
+## We have seen this before: GPT-2
+
+This pattern is not new. Think back to GPT-2. At some point OpenAI came out and
+said: "We built GPT-2, but we can't release it, because it could be abused for
+spam and it's a huge risk. Oh no, we're all going to die."
+
+A month later they released it, quietly. People started using it, and it was a
+model that was more or less fine syntactically, but semantically it was all over
+the place. They were not usable chatbots yet.
+
+With Mythos the same thing happened, only much longer, much more intense, much
+more interesting, and much more tied to a theme that fascinates me: surveillance.
+
+## The Mythos saga
+
+So Anthropic comes out and says: "We've built the most powerful model in
+history. It's called Mythos, but we can't release it because it's too
+dangerous." And yet they tell everyone, and they publish a 200-page report where
+they explain that they had a psychiatrist analyze Mythos, and then Mythos escaped
+the sandbox and emailed a researcher while the researcher was calmly sitting in
+the park eating a sandwich.
+
+So: the most important model in history, the most powerful, but too dangerous.
+Here's the detailed report on how it works. But we won't give it to you.
+
+Then they announced **Project Glasswing**. With Project Glasswing, they said,
+they wanted to give early access to this super-powerful, super-dangerous model
+only to a restricted circle of humanity: the part of humanity they can trust, the
+part that truly cares about the well-being of the planet and its people, the part
+that keeps us safe, the part that represents the citizenry.
+
+In practice, they gave early access to Mythos to all their friends and their
+biggest B2B clients. They threw in the Linux Foundation, just to signal that
+there's something non-profit in the mix, so its presence could "balance out" the
+likes of JPMorgan Chase in the room. Because the worst had to be counterbalanced
+somehow.
+
+## The researchers push back
+
+Meanwhile, the few researchers who actually had this otherwise-unusable Fable in
+their hands started saying: sure, it may be more powerful, but if you take
+something like Opus 4.7 and run it long enough — leaning on test-time compute,
+making it produce more tokens — it gets to the same vulnerabilities anyway. It's
+not that only Mythos can do it and the other models can't. But by then it's too
+late for the truth to matter.
+
+And in my own small corner, this bald guy here has said it more than once, and
+I'll repeat it: this is nonsense. This is nonsense.
+
+## Guardrails and the shifting excuse
+
+After a while they come back with Fable, which is basically a version of Mythos
+with guardrails. These guardrails are meant to stop the model from being used for
+biological harm and for cybersecurity — for hacking.
+
+Notice how the excuse keeps rotating. First it was spam. Now it's the biological
+problem, the security problem. Then at some point they'll add something else.
+Always the same nonsense.
+
+## Enter the government
+
+Then the American government steps in and says: "It's too dangerous, we agree
+with you, so everybody freeze, block everything, because only American citizens
+can use this."
+
+And what does citizenship and nationality have to do with any of this? It matters
+because, a few days after the model got blocked, Anthropic started asking for ID
+documents. And people around the world started talking about the
+**nationalization** of these models.
+
+This slots neatly into a path that's already underway: Digital ID, Central Bank
+Digital Currency, the steady tightening of web services. It all falls beautifully
+into the same big trend we've been watching, and it can only keep going that way.
+
+## Nerfing models is not new either
+
+Let me add a few words about the nerfing of these models. This is not new either.
+This morning I saw statistics on the latest Fable release, and it's genuinely
+worse than the Fable they published just a few weeks ago — and nobody really
+knows how any of it relates back to Mythos, which is, fittingly, a myth.
+
+Making models dumber has happened again and again. I remember it well, and we
+noticed it in our own small **Cheshire Cat** community. We were using GPT-3 — I
+had access to the GPT-3 API even before ChatGPT came out. Back then, in the
+Cheshire Cat, we did the tool parsing by hand. There were no tool-calling APIs,
+so it was all done inside the Cat with a prompt that parsed the output. An
+insane setup, if you think about it, and one I'm still quite proud of.
+
+Then, right after ChatGPT blew up, both ChatGPT and GPT-3 suddenly — within a few
+days — could no longer fire the tools in our tests. Things they had been doing
+just days earlier, in particular using tools, stopped working.
+
+I complained about it. In the community there was a guy from Microsoft, and he
+publicly challenged me: "You can't talk like that. You have no proof. These are
+serious companies." Microsoft at the time was investing enormously in OpenAI and
+in blasting AI in every direction — they'd opened their own APIs, they had
+exclusivity on OpenAI's models. He told me I had no right to say the models had
+been nerfed.
+
+A few weeks later, a paper came out from people who had tracked these models'
+performance over time behind the American APIs, and they showed that both ChatGPT
+and GPT-3 had indeed suddenly become less capable on benchmarks.
+
+## The key: it's the compute
+
+Why does this happen? And I apologize to my long-time followers for repeating
+myself so much, but the essential lens for reading all of this is **compute** —
+energy and compute.
+
+Running this stuff takes a lot of machines, it costs a lot, and the low prices
+they've kept so far — subscriptions, even letting hundreds of millions of people
+use ChatGPT and friends for free — is all money on credit. It costs far more than
+what they charge, and they don't have enough compute to serve everyone who wants
+it. So they're squeezed on both ends at once: using fewer and fewer resources
+while charging more and more for the resources they do use.
+
+So what do they do? They publish the super-model at maximum quality, let people
+try it, and then they put the R&D teams to work building models that are
+distilled or quantized or otherwise made more efficient — roughly the same
+performance, but cheaper to run.
+
+## Why I care
+
+And why does all this matter to me? Because in the coming period I've given
+myself a new mission: to pick which models to actually build on. I'm looking at
+all of them — Fable, Mythos, and the Chinese models too — and I have to choose.
+
+Same story, over and over. How many more times do we have to watch this? Probably
+another fifty. We keep lining up like sheep. But keep your eyes open: the pattern
+is always the same, and knowing it is what lets you see through the next round of
+hype.

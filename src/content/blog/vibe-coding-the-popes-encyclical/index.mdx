@@ -1,0 +1,74 @@
+---
+title: "Vibe-Coding Session on the Pope's Encyclical: Highlights"
+description: 'Reading the new AI encyclical, building a Pope-vs-Big-Tech video game with Claude Code, and finding the exact limits of vibe coding.'
+date: 2026-05-26
+tags: ['vibe-coding', 'claude-code', 'agents', 'ai']
+image: './cover.jpg'
+videoId: 'qDFpm5w2SPM'
+duration: 'PT5H29M55S'
+authors: ['pieroit']
+---
+
+import VideoEmbed from '@/components/VideoEmbed.astro'
+
+<VideoEmbed url="https://www.youtube.com/embed/qDFpm5w2SPM" />
+
+I sat down one afternoon to poke at Pope Leo's new encyclical on artificial intelligence and ended up streaming for five and a half hours. What started as a serious reading turned into a full live vibe-coding marathon: a little static website to digest the document, and then a 2D video game where the Pope shoots crucifixes at Big Tech monsters pouring out of a data center. We called it **Spiritual Vibes**.
+
+This is a curated digest of that stream, the moments and ideas worth keeping. The full video is embedded above.
+
+## Reading a surprisingly political document
+
+I expected the encyclical to be all saccharine talk about the soul. Instead it turned political, and I loved it. I had **Claude** re-read the whole thing, summarize it chapter by chapter, and then reorganize it by topic so we could drill down into what we actually cared about: jobs and automation, the machine versus the human soul, and the risks of Big Tech concentrating power.
+
+The passages that struck me most (I read them out loud at the end of the stream): the Church draws a clean line around lived experience, emotion, relationship and spirituality, and quietly concedes the ground of raw cognition to the machine. And then it gets sharp on power. One line I couldn't believe was in an encyclical: that AI amplifies the power of whoever already holds resources, data and expertise, letting a few influential groups shape information, consumption and even democratic processes. It says better than most tech journalists what almost nobody on LinkedIn says between one vibe-coded demo and the next.
+
+The word that stuck with me was **oversight**. Who controls this? By the way, to comment on the encyclical I used something like fourteen different Big Tech services. Every word I streamed went through Google; every prompt went to Anthropic's servers. The situation is a little dystopian, and that tension is the real note I wanted to end on.
+
+## Building Spiritual Vibes with Claude Code
+
+The game concept was crowdsourced live in the chat: Pope Leo fires crucifixes at Satanic CEOs spilling out of Big Tech servers, collects Bible pages as power-ups, and recharges at a confessional. We landed on a run-and-gun feel, built on **Phaser**.
+
+A recurring teaching point right from the scaffold: **always check library versions**. Claude reached for Phaser 3.9; I distrusted it, checked **GitHub**, saw 4.1 was current, and pinned Phaser 4. Language models get versions wrong, always. That is exactly the kind of thing you have to stay on top of.
+
+Because this was a low-stakes toy, I let Claude Code run bash, read and write freely without asking permission. I say the opposite in my corporate courses: the higher a project's risk profile, the less rope you give the agent. Tuning permissions with regexes, so some actions are auto-approved and others prompt, is now part of the craft, not an afterthought.
+
+A couple of things I kept repeating to the audience because they matter:
+
+- **Green dots are tool calls.** When you see those little dots scroll by, that is the language model deciding to call a function, `bash` or `write`, with arguments. That is the agentic loop, in the most literal sense.
+- **Clear your context often.** I used `/clear` constantly. Longer context means more tokens and degraded performance. Call it context rot; a fresh conversation just works better.
+- **Persist project facts in CLAUDE.md.** I kept telling Claude the site was static, deployed on GitHub Pages, with no server-side logic, and to write that down so it would stop reintroducing a web server on me.
+
+## OpenSpec, skills, and where MCP is lagging
+
+To steer the agent more tightly than plan mode, I brought in **OpenSpec** as a harness on top of Claude Code. It runs through phases, explore, propose, apply, archive, and, unlike plan mode's single file, it generates a proper set of proposal, design and tasks files. The archived spec becomes living documentation of the project. Half-jokingly, at that point we stopped being vibe coders and became "agentic engineers" doing spec-driven development.
+
+OpenSpec ships as **agent skills**, which gave me a chance to teach how skills actually work. A skill's name and description get injected into the prompt at startup; the `skill` tool then loads the full `SKILL.md` into context only when it is needed. It is a pyramid of progressive disclosure, names, then the skill file, then the scripts it references, opened lazily so you do not burn context. My honest opinion on stream: the **MCP (Model Context Protocol)** ecosystem should adopt this same trick but is lagging and has gotten complicated. Its "resources" concept, the little attachment idea, is genuinely underrated, and I think skills are where a lot of beginners should start before reaching for heavy MCP servers.
+
+I also want to be honest about a self-critique: my specs were too big, touched too much, and, worst of all, I did not read them. Spec-driven development only works if the specs are small, precise, and actually read. When they are not, you just waste tokens, which is exactly what happened, so I drifted back toward plain vibe coding for the small stuff.
+
+## The wall: sprite animation, and a folder called "shame"
+
+The most instructive stretch was hitting the ceiling. I wanted animated sprites for the Pope, and the whole thing fell apart in an educational way.
+
+The AI image generator produced **fake transparency**, it literally drew the grey-and-white checkerboard squares instead of a real alpha channel. My theory: online sprite-sheet previews fake the alpha to get you to buy the real asset, so the model learned to draw the little squares. It was approximating what a sprite sheet looks like as a picture, not producing a usable one. When I could not strip the background myself, I had Claude write a Python script with PIL to flood-fill it from the edges. Then, hitting the wall on cutting frames, I had it build a throwaway browser tool to slice the sheet by hand, and made it put the tool in a folder I named `shame`. (We debated guilt versus shame; for the Catholic Church it is more guilt.)
+
+In the end I surrendered: "drop the animation, use the first frame and nothing else." The lesson is clean. You can vibe-code your way remarkably far, but real sprite animation needs a dedicated tool or a professional. The crucifix projectile, by contrast, I solved by having Claude just draw two rectangles programmatically. I did enjoy imagining the Anthropic engineers reading a prompt that says "make me a crucifix with the head pointing right."
+
+## Deploy is its own profession (and it fought me)
+
+Getting code written is only half the job. The GitHub Pages saga was the running gag of the stream: my user-level CNAME kept dragging every repo onto my personal domain, I briefly feared I had knocked my **Cheshire Cat** site offline, and I got tangled in "deploy from a branch" versus GitHub Actions and a 404 from files sitting in a subfolder. Eventually I just gave up fighting it and left the game under my own domain.
+
+I am genuinely weak at DevOps, and I think that is a useful thing to show. This is also the honest catch for vibe coders: the second wall, after making code work on localhost, is putting it in production, and that is a profession. Platforms like Lovable or Replit hide that wall by engineering the backend for you; you feel like you built everything, but you really only did the frontend.
+
+Along the way the repo picked up forks, stars, and community contributions, a pull request adding the background, an issue offering an original soundtrack, which gave me an excuse to keep hammering on checking licenses and on the difference between an issue and a PR.
+
+## What it cost, and what I took away
+
+The number people should hear: I ran `/usage` at the end. I am on a Claude Max plan, and about three hours in I blew past the plan limits and fell back to the API, burning roughly twenty dollars of credits in the fourth hour alone. Total for the session was somewhere around twenty-odd dollars. To everyone on a twenty-dollar subscription: with code, context explodes fast. This is what awaits us.
+
+The takeaways I would stand behind: vibe coding is real and powerful for scaffolding, glue, one-shot debugging and DevOps you do not know, and it hits a hard ceiling on specialized craft. Spec-driven development pays off only when specs are small and you actually read them. And the encyclical itself is genuinely good, more modern and more political than most of its online commentators. Our little game is entirely celebratory of it.
+
+---
+
+_This is a curated highlights digest of a single 5.5-hour live vibe-coding stream. The full, unedited session, video game and all, is the video embedded at the top._
