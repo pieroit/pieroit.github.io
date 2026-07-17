@@ -1,17 +1,12 @@
 ---
-import { Image } from 'astro:assets'
-import Layout from '@/layouts/Layout.astro'
-import Breadcrumbs from '@/components/Breadcrumbs.astro'
-import Link from '@/components/Link.astro'
-import PageHead from '@/components/PageHead.astro'
-import CallToAction from '@/components/CallToAction.astro'
 import Benefits from '@/components/Benefits.astro'
+import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import CallToAction from '@/components/CallToAction.astro'
+import PageHead from '@/components/PageHead.astro'
 import Testimonials from '@/components/Testimonials.astro'
 import VideoEmbed from '@/components/VideoEmbed.astro'
 import { CONTACT_FORMS } from '@/consts'
-
-
-
+import Layout from '@/layouts/Layout.astro'
 ---
 
 <Layout>
@@ -22,7 +17,6 @@ import { CONTACT_FORMS } from '@/consts'
 
   <section class="min-w-full">
     <div class="prose mb-8">
-
       <CallToAction
         title="Learn to create AI agents from an insider"
         description="Boost your team's skills by learning AI from an insider. Hands-on approach, with an eye on product and respecting solid scientific roots."
@@ -33,37 +27,43 @@ import { CONTACT_FORMS } from '@/consts'
       <VideoEmbed
         url="https://www.youtube.com/embed/r5lpvA5R7AA?si=45O4UDrv3IxOrxFU"
       />
-      {/*<Image
+      {
+        /*<Image
         src={'/static/collage_public_speaking.png'}
         alt={'Collage Piero Public Speaking and Training'}
         width={1280}
         height={720}
         class="object-cover"
-      />*/}
+      />*/
+      }
 
-      <Benefits 
-      items={[
-        {
-          title: "Stay ahead of the curve",
-          description: "Most people just talk about AI, I'll get you started for real. Courses available for devs and executives.",
-          icon: "lucide:fast-forward",
-        },
-        {
-          title: "Hands-on approach",
-          description: "Learn by doing, with an eye on product and respecting science.",
-          icon: "lucide:pocket-knife",
-        },
-        {
-          title: "Deep Knowledge",
-          description: "Unlock both theory and use cases, market trends, protocols (MCP, A2A), architectures, agents.",
-          icon: "lucide:microscope",
-        },
-        {
-          title: "Open Source",
-          description: "Practice on well established open source frameworks, like the Cheshire Cat AI. No vendor lock-in.",
-          icon: "lucide:code-xml",
-        } 
-      ]}
+      <Benefits
+        items={[
+          {
+            title: 'Stay ahead of the curve',
+            description:
+              "Most people just talk about AI, I'll get you started for real. Courses available for devs and executives.",
+            icon: 'lucide:fast-forward',
+          },
+          {
+            title: 'Hands-on approach',
+            description:
+              'Learn by doing, with an eye on product and respecting science.',
+            icon: 'lucide:pocket-knife',
+          },
+          {
+            title: 'Deep Knowledge',
+            description:
+              'Unlock both theory and use cases, market trends, protocols (MCP, A2A), architectures, agents.',
+            icon: 'lucide:microscope',
+          },
+          {
+            title: 'Open Source',
+            description:
+              'Practice on well established open source frameworks, like the Cheshire Cat AI. No vendor lock-in.',
+            icon: 'lucide:code-xml',
+          },
+        ]}
       />
 
       <CallToAction
@@ -71,9 +71,9 @@ import { CONTACT_FORMS } from '@/consts'
         cta="Get Quote"
         href={CONTACT_FORMS.training}
       />
-      
+
       <Testimonials />
-      
+
       <VideoEmbed
         url="https://www.youtube.com/embed/E1EGj7k0o88?si=VZMLhm73veJry8vi"
       />
@@ -83,7 +83,6 @@ import { CONTACT_FORMS } from '@/consts'
         cta="Get Quote"
         href={CONTACT_FORMS.training}
       />
-
     </div>
   </section>
 </Layout>

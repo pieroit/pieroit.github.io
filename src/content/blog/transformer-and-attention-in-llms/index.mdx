@@ -1,0 +1,52 @@
+---
+title: 'Transformer and Attention in LLMs'
+description: 'What actually sits inside the black box of a language model: the Transformer architecture, attention blocks, and why language is just a time series to a machine.'
+date: 2025-07-19
+tags: ['ai', 'llm']
+image: './cover.jpg'
+videoId: '4jexyc7_pwA'
+duration: 'PT7M7S'
+authors: ['pieroit']
+---
+
+import VideoEmbed from '@/components/VideoEmbed.astro'
+
+<VideoEmbed url="https://www.youtube.com/embed/4jexyc7_pwA" />
+
+Explain attention and the Transformer in artificial intelligence to me. These are terms you hear a lot, a bit less lately, and they concern the actual structure of the neural network, the simulation of nervous tissue that manages and produces language. So we are inside the black box.
+
+When we talk about agents, we are talking about software that internally also makes use of the language model, let us say GPT, the black box, the simulation of nervous tissue trained to continue text, to handle language. What does this black box look like inside? It is organized into layers of neurons that pass signals between each other. Picture a series of layers of neurons.
+
+## What the Transformer is
+
+Transformer is the name given to the architecture of these language models, that is, the specific way the layers are arranged. It is an architecture that was born at Google, I think around 2016, and was later adopted by OpenAI for the various GPT 1, 2, and finally 3. GPT-3 led to ChatGPT, and the Transformer was one of the key ingredients in the birth of ChatGPT.
+
+This Transformer involves a series of layers called attention heads, wired in sequence. So picture the Transformer as a neural network with several attention blocks one after the other. And what does each of these attention blocks do? Why did they call it attention?
+
+## Language as a time series
+
+To get it, start from the fact that language, for neural networks, is like a multivariate time series. Do not panic. Imagine looking at the charts of Bitcoin, the euro, and something else all at once, over time, day after day. The language model sees language like that. It does not see words, it sees something like a sequence of colored marbles. Each marble is defined by a set of numbers. So it sees marble, marble, marble, marble, and each marble is a little strip of numbers, as if they were all time series unfolding over time.
+
+That is also why Transformers are used in finance, in video, in things that have nothing to do with language. They are used for anything involving sequences and time series, and language is a form of time series for machines, and honestly for our ears too.
+
+## What the attention block does
+
+So what does the attention block do? Inside it there are the query, the key, and the value, but at its core it is a mechanism where every piece of the sequence is put into relation with every other piece. Picture a sentence made of ten words. The attention layer relates each of those words to every other one.
+
+For example, take a sentence like: I took the dog out and he went for a run. Who went for a run? He. And what is he? A dog. Attention has to bounce between these words and produce big numbers on the words that are tied to each other, so it can abstract away from the raw sequence toward signals that are syntactic and semantic.
+
+Doing this several times in a row, starting from the raw series that comes in and passing from layer to layer, is called deep learning, precisely because the network abstracts as the signal passes through these layers, in this case through the attention blocks. Little by little it analyzes this sequence, the attention block looks at the relationship of each word with every other one, and moving to the next layer attention runs the same mechanism again but on increasingly abstract signals. This is what lets a language model take a text of two or three thousand words and give you a summary.
+
+So, to restate it: Transformer is the architecture, attention is the block contained inside that architecture.
+
+## Why you hear about it less now
+
+These days you hear about it less and less, and honestly there is less and less need to deal directly with attention or the Transformer, because the language model is used simply with a command, with a network call to a service, to ChatGPT or to a model running on your own computer with Ollama. It all became much simpler.
+
+What is worth knowing, and what is interesting, is that the language model revolution had its scientific turning point precisely in the Transformer architecture, which is excellent for time series. Before the Transformer people used LSTMs, GRUs, recurrent networks. Those were a type of neural network that, unlike the Transformer where the signal comes in and goes straight out, kept a state, a kind of memory. The Transformer does not keep state, it does not keep a memory of the signals. It simply has to predict the next syllable, the next word, whatever it is, and it holds on to no information about the sequence we fed in.
+
+The old networks instead maintained a state, a kind of reverberation of the signals inside them. They were a bit more inspired by how the human brain works, which really does have a reverberation, internal signals that keep acting and circulating even while we sleep. They were more interesting biologically, but for analyzing sequences like language, Transformers apparently work better.
+
+They were born at Google, then adopted by OpenAI as far back as GPT-1, which I think was around 2017 or 2018. With GPT-3 the Transformer was still there. To this day all these neural networks are based on Transformers, and Transformers are also the reason these models were able to scale. The second turning point was GPT-3, the famous 2020 paper where OpenAI threw in far more data and built much bigger networks, still based on these Transformer architectures, and got the first big generalist language model, GPT-3.
+
+So: scientific turning point, the Transformer. Practical, applied turning point, being able to scale on data and compute.

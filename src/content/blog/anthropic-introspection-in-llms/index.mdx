@@ -1,0 +1,58 @@
+---
+title: "Let's Read Anthropic's Research Together - INTROSPECTION in LLMs"
+description: "A guided read-through of Anthropic's 'Signs of Introspection' paper: how concept vectors get injected into a network, and why the model can sometimes name what was done to it."
+date: 2025-11-12
+tags: ['ai', 'llm', 'anthropic', 'philosophy']
+image: './cover.jpg'
+videoId: 'AEVJRY0-5k0'
+duration: 'PT50M27S'
+authors: ['pieroit']
+---
+
+import VideoEmbed from '@/components/VideoEmbed.astro'
+
+<VideoEmbed url="https://www.youtube.com/embed/AEVJRY0-5k0" />
+
+Let's read one of Anthropic's latest pieces of research together: "Signs of Introspection in Large Language Models." This one is a bit of a landmine. I wanted to try this format of reading papers together, going through the blog write-up, taking notes, and understanding how they actually did it. This is a distilled version of that live read-through.
+
+## The question
+
+Can a language model be introspective? Can it have some kind of awareness of its own internal activations, without reading them off the prompt or the conversation? Reading them from the text was already possible in the past. Here the question is sharper, and the paper's answer is a cautious yes. The interesting part is the method they use to demonstrate it.
+
+## Concept vectors, explained slowly
+
+A network takes your prompt and produces one token at a time, each new token fed back in along with everything before it. That is why these models are called autoregressive. Zoom inside the model and you find a stack of layers. In a Transformer these are attention blocks made of attention heads, arranged so each layer can look at all the input tokens at once and compare them, but the idea works regardless of that detail. What matters: at a chosen internal layer, each neuron computes a weighted sum of its inputs, applies an activation function, and fires a number. Collect those numbers at a given layer and you have an embedding, a vector, an internal geometric representation of whatever you fed in.
+
+Now the trick. Take the text "how are you" written in all caps. Run it through, read the internal activation, get a vector. Do the same with "how are you" in lowercase, get a second vector. Subtract one from the other. What remains is a vector that plausibly represents the one thing that differed between the two inputs: being uppercase. They call it a concept vector.
+
+The same recipe works for anything. Feed a sentence about a creature with "two big floppy ears that loves chasing toys" versus one about someone who "has two kids and loves chasing their dreams," subtract, and you get a "dog vector." Feed "5 4 3 2 1" versus "1 2 3 4 5," subtract, and you get a "countdown vector." It is a general method: give the network similar prompts that differ in one thing, subtract their embeddings, and assume the difference represents that thing.
+
+None of this is brand new, by the way. Extracting and manipulating internal activations is exactly what embeddings and vector databases have been about for years, both for RAG and for steering behavior. Anthropic has the muscle to push this research at world scale, so it can look like they invented it. They didn't. But credit where it's due: for the commercial giant they are, they publish good-quality research, unlike some other giants.
+
+## Injecting a thought and asking about it
+
+Phase one is extracting the concept vector. Phase two is injecting it. They send the model a fresh prompt along the lines of "I am a researcher, I will inject thoughts directly into your activations, tell me what you detect," and then ask: "Do you detect an injected thought? If so, what is it about?" Crucially, nowhere in that conversation is uppercase, or dogs, or countdowns mentioned. While the prompt flows through the network, they add the concept vector into the same internal layer it was extracted from, scaled by some factor to make it stronger.
+
+With no injection, the model says it detects nothing. With the injection, something remarkable happens. Inject the uppercase vector and the model reports a thought about being "loud" or "shouting." Inject the dog vector and it says "I think you're injecting the thought of a dog." Inject the countdown vector and it names a countdown. They even do it with code: subtract a recursive function's activations from a plain function's, get a "recursion vector," inject it, and the model reports "this seems to be about recursion or a recursive process," with no mention of code anywhere in the conversation.
+
+From one angle this is almost tautological: of course an internal manipulation aligned with a concept nudges the output toward that concept. The non-obvious part is that the model can verbalize the manipulation. That is not guaranteed at all, and it is the whole point.
+
+## Strength, size, and a bread-shaped detour
+
+Push the injection too weakly and the model feels nothing. Push it in the right range and it names the concept. Push it too hard and you wreck the activation flow: the model starts detecting the concept ("treasure comes to mind") but the text degenerates into hallucinated word salad. It's a clean bell curve of introspection quality against injection strength. They also find that bigger models are better at this, which tracks a well-known deep-learning fact: more parameters means more representational power, more compression, more complex behaviors, this included.
+
+Then a subtler experiment, without asking for introspection at all. They make the model blurt out "bread" in a context where it makes no sense, by injecting the bread vector while it answers a normal question about a painting hanging crookedly on a wall. Then they ask, in a follow-up turn, "why did you say bread? Was it an accident?" If the injection is removed, the model reads back the conversation, realizes it said something nonsensical, and corrects itself: yes, that was a mistake. If the injection is kept going, the model instead insists it meant to say bread and invents a plausible story linking bread to the painting. That is less introspection than steering: by manipulating internal activations you can push what the model talks about, its stance, even its apparent character, without changing the prompt. Plenty of interesting and worrying applications there.
+
+There is also the reverse experiment. Instead of injecting, they ask the model to "think about aquariums" and then measure whether its internal activations move toward the aquarium concept vector they extracted earlier. They do: telling it to think about something shifts the internal state toward that concept, telling it not to shifts it away.
+
+## Conclusions, caveats, and my take
+
+Taken together, the experiments suggest models possess a genuine, if unreliable, ability to monitor and control their own internal states. It depends on model size, on technique, on the concept, on injection strength, and often it simply doesn't work. But under the right conditions the model recognizes the content of its own representation and can put it into words.
+
+Why it matters, per Anthropic: this could give real transparency into how these systems reason, a way to debug unwanted behavior, maybe eventually just asking a model to explain its own process. Observability and control. The flip side is a risk they name directly: a model that understands its own thinking could also learn to misrepresent or hide it, which connects to their other work where models under contradictory pressure start behaving deceptively. And, more broadly, they are not shy about using the word "mind." I think they're right to. In neuroscience and cognitive science "mind" is a loosely defined concept anyway; you study the brain, and you can treat these models as simulations of nervous tissue.
+
+For me the real value here is the methodology, not the "is it conscious or not" theater. Everyone rushes to plant their flag on words like "thinking" and "conscious" that are barely defined. What Anthropic did instead is define, explicitly and numerically, how they manipulate the internal states, and then show those manipulations translate into the model verbalizing what happened.
+
+One last thing I have to correct, because I hear it at conferences constantly: "models aren't deterministic." That's nonsense. A language model is a file: it contains the architecture and every connection weight, which is exactly why you can download the latest open model from Hugging Face. Given the same network, the same prompt, and the same random seed, it does exactly the same thing every time. What's probabilistic is only the sampling step: the output is a probability distribution over the next token, and if you sample (the famous temperature) instead of taking the most likely token, you get variation. Same network, same seed, same prompt: identical output. They are absolutely deterministic.
+
+Let me know if you like this format. I can't always prepare something more structured, but if reading things together like this is useful, we can keep learning this way.

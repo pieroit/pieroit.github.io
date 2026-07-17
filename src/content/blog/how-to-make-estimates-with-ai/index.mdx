@@ -1,0 +1,42 @@
+---
+title: 'How to Make Estimates with AI'
+description: 'Why I keep refusing to build fully automatic quoting systems: language models do not do math, and the real business rules live as implicit knowledge in human heads.'
+date: 2025-08-01
+tags: ['ai', 'llm', 'consulting', 'ai-strategy']
+image: './cover.jpg'
+videoId: 'o7LIwItZNyw'
+duration: 'PT6M26S'
+authors: ['pieroit']
+---
+
+import VideoEmbed from '@/components/VideoEmbed.astro'
+
+<VideoEmbed url="https://www.youtube.com/embed/o7LIwItZNyw" />
+
+How do you make quotes and estimates automatically with artificial intelligence? This is a question I've been getting for years, with people even willing to pay for this kind of thing, to have automatic quoting systems built for them. I've always refused. Let me tell you why. The idea for this video comes from another video by BedBoss, worth a watch, they're excellent.
+
+The request is legitimate: since I make a lot of quotes, and after a while those quotes get boring to do, I want to automate the process. So far so good. What's the problem? I see two main reasons I've never gotten into this stuff.
+
+## Problem one: language models don't do math
+
+People tend to confuse today's chatbots with classic machine learning models. What do I mean? Language is one thing, doing arithmetic is another. If I have rules for making quotes, spreadsheets, inventories, this costs so much per kilo, this costs so much per unit, but when this factor is involved there's a 10% variation, these are exact rule systems that have to be followed, have to be written down, have to be made algorithmic.
+
+And even though the language model, ChatGPT or the o3 and o4 reasoners, can more or less handle some arithmetic, you cannot trust a language model to do numeric calculations. Why? Because to ChatGPT, numbers are tokens. If you write "how much is 10,000 times 8", it's not like a calculator that sees 10,000 as a number, times as an operation, 8 as another number. It maybe sees a first token that's "10", then three tokens that are zeros, then another token that's a zero plus a space, and so on. The only reason it can do simple sums is that it has memorized the times tables up to around 700, because those basic operations are repeated millions of times across the internet. But the moment you use decimals, exponents, divisions with lots of decimal places, the language model can't do it.
+
+And in fact all those idiots who still keep testing chatbots with "tell me how many R's are in Strawberry" - you're an idiot, you haven't understood how a language model works. Spare us this nonsense, please. Language models don't do numeric arithmetic, they do arithmetic over sequences of tokens. Don't make them do the calculations.
+
+## What an automatic quoting system actually needs
+
+So, to move toward an automatic quoting system, sure, you put the conversational part on top, but underneath there has to be an algorithm that actually produces the quotes. That algorithm can be rule-based and explicit, or it can be another model based on a history of past quotes: a machine learning model trained on past quotes, on the numbers though. So you go and use a random forest, or a smaller neural network that does only that, not something dealing with language, because that's a different thing entirely.
+
+## Problem two: the exceptions live in people's heads
+
+And here's the second reason I've never thrown myself into this kind of work. At some point, somewhere, those rules or that history of past quotes has to exist, and above all you have to watch out for the thousand exceptions in these cases. Typically the person who comes to you, the "AI expert" and company, asking for the automatic quoting system, is someone who doesn't understand the difference between structured algorithms and statistical algorithms. Which means that as soon as he sees something go wrong, he doesn't stop to think about a fuzzy algorithm that gives answers on a probabilistic basis, and that will therefore make mistakes he has to account for. He thinks it's an exact system.
+
+And he's not willing to write down all the rules he uses, because usually the rules for making quotes, take construction for example, they can give you the bill of quantities, how much each thing costs according to them, but typically in the whole there are 6,000 variations, there are the local laws, there's the surveyor who tells you "no, this can't be done in 6 months, we've got to do it another way". There's actually a mountain of implicit knowledge in the human beings who sit there making quotes, and it's hard to translate.
+
+## The semi-automatic middle ground
+
+To wrap up this whole automatic-quote thing, which has just never sat right with me. It's not that in the future someone won't pull it off, and pull it off brilliantly. But I'd only do it in relatively low-risk situations, or, when it's high-risk, quotes on very large sums or matters of real responsibility, with a human in the loop: a person who kicks off the quote from the automatic system. The automatic system looks through the history, the various sources, you converse with it, all the bells and whistles you like, and it gives you a draft quote. Then there's a person who checks it, signs it, and sends it. That's a semi-automatic quote. A fully automatic quote, especially on stuff worth a lot, forget about it.
+
+What you shouldn't forget is that I've launched a course on artificial intelligence for companies, companies only. It lasts 16 hours and can be done either online, four sessions of four hours, one a week if you like, or I come to you in person and we do two days back to back. The program covers the basics of machine and deep learning, so at least you understand what we're talking about, then the whole part on language models, agents, RAG versus fine-tuning, tools, and we do all the exercises with the Cheshire Cat in open source. I have you build a plugin so you see a bit of how all this stuff works. I've also added a section on the AI market, which, to sum it up, is still a bit like teenage sex: everyone talks about it and nobody's doing it, but slowly something is emerging, the numbers are there. If you're interested, get in touch. Again, companies only.

@@ -1,0 +1,60 @@
+---
+title: 'AI Agents Are Simply Software'
+description: 'The language model is stateless: it takes context in and spits one token out. An agent is just the software you wrap around it to give it memory and actions. Everything else follows from that.'
+date: 2026-01-05
+tags: ['agents', 'ai', 'llm', 'software']
+image: './cover.jpg'
+videoId: 'rmjWl1-iSYM'
+duration: 'PT9M44S'
+authors: ['pieroit']
+---
+
+import VideoEmbed from '@/components/VideoEmbed.astro'
+
+<VideoEmbed url="https://www.youtube.com/embed/rmjWl1-iSYM" />
+
+If you're a developer and you want to start looking at this AI stuff a little, there are some concepts you need to understand first, to make your life easier down the line. These are concepts that don't depend on the hype, they don't change every week, so they deserve your time.
+
+## The language model spits out one token at a time
+
+The first concept, obviously, is the language model. On top of the language model you build the agent, layer by layer, like an onion.
+
+What does this language model do? ChatGPT in its early versions, Claude, Gemini, Llama, Qwen. These are neural networks, the so-called models. What's special about them? They receive a string as input, usually. And that string is the prompt. This mega-prompt actually also contains the conversation's messages: the context that enters the language model is what the user wrote, plus all the previous messages, plus any extra stuff added in, and we'll come back to that. Anyway, context goes in, one big prompt.
+
+What comes out? One token. A single one. And you need to understand this, because when they tell you "you need streaming," "you pay by the token," here's why: when context enters the language model, the network produces one token in output, that token gets appended back to the input context of the first round, and then off it goes, one token at a time, using the tokens it already spat out, queued onto the original input. Today they basically all work this way. It won't necessarily always be like this, but you can bet on it for a while.
+
+## Why this matters: the model is stateless
+
+Why is this relevant to your work as a technician, a programmer, a systems engineer, but also as a designer? Because the language model is stateless. It has no memory. It's a kind of giant reflex: stuff goes in, a token comes out, and it keeps absolutely nothing.
+
+Which means that to give these systems extra memory, for example the PDF you just uploaded, or to make them do concrete things, the so-called tools (turn on the light, create a file, send an email), you have to build software around it.
+
+Now, even though much of the tech world is busy defining an agent as some entity that makes autonomous decisions, and firing off all this nonsense on full auto, the agent is simply the software you mount around the language model to give it memory, actions, and executions that are custom and vertical. So: the little model sits inside, you send it a context that can be more or less manipulated, and then it starts producing tokens. The agent is the software around it. It's a broad family of software that internally uses language models.
+
+When you hear "agent," don't be scared, because it's really not all that science fiction. It's a way of saying: we're building software around this object, because on its own it's stateless, ungovernable, it hallucinates, so I invent things around it to make it do things useful to people. The language model is the model. The agent is the software around it.
+
+## Two branches: memory and actions
+
+Now there are two big branches of what you can do with these agents, and I repeat, they are memory and actions, the technical names you'll find for these things.
+
+For memory, we talk about RAG, essentially retrieval-augmented generation. For actions, we talk about tools, and there the various protocols open up, MCP, the various architectures. But at bottom, these are the two big strands. And at a low level, in both cases it's about changing the context going into the language model. And how does that context get changed? The agent changes it. The agent is software written by you that builds the context to send as input to the language model. The language model generates tokens, and then your software, the agent, takes those tokens and decides whether to run another round, whether to fire a tool, whether to add more memory, whether to send the answer back to the user.
+
+## Don't get dragged around by the news
+
+So my advice is: don't let yourself get pulled around too much by all the novelties that arrive. And here comes a bigger-picture point. There's a reason everyone's talking about agents now, and the big AI tech companies are pushing on the application layer.
+
+What do we mean by application layer, the layer agents belong to? From 2020 onward, with GPT-3, then GPT in 2022, and all the circus that followed, the bet was that by scaling up data, compute, and network parameters, that is, how big this model is, these models would get smarter and smarter and need less and less software around them, less specific programming.
+
+But it was actually already known from the early 2020s that there are so-called scaling laws, and these laws tell us that to grow this intelligence linearly, like a straight line, you have to increase those three resources exponentially. That's the essential message of the scaling laws. So scale made us leap from non-language to language. GPT-3 was a phenomenon of scale: take the previous language-model networks and make them 10x, out came GPT-3, and the neural network understood and produced language when before it didn't. It was a victory of scale, of brute force, of massive use of those three resources.
+
+## We already hit the plateau
+
+A billion-dollar investment cycle began, with lots of implications in finance too, the possible bubble and non-bubble, all these circular investments. But basically, many kept betting on scale. Slowly, though, scale, requiring exponential resources, means that after you've done 10x you have to do another 10x, then another 10x, and at some point the data centers, the data in general, the capital run out.
+
+I called this, in my own small way. I'd sensed there would be a plateau, that at some point, since you can't increase resources exponentially forever, the models settle onto a certain kind of intelligence and things go on more or less like that. And in my view the consequence would also be that the focus shifted away from the models and toward the application layer, that is, toward what you do with them. Because given a certain model, more or less powerful, capable of generalist things, you then have to mount software around it. That's the so-called application layer. Agents are born, and these big tech companies now push agents themselves, agent frameworks, agent protocols. Why? Because making models even smarter than the ones we have requires either an outrageous use of resources, or rethinking the whole architecture underneath at the scientific level, the neural-network level, and that could take time. There aren't the resources for another leap. So no matter how many benchmarks come out, no matter how a new model drops every week, we've already reached the plateau.
+
+The golden period was from 2020 to mid-2024. After that, things slowed down enormously, and the models are refined not so much to be raw intelligence going up, but for how specialized they are at doing pragmatic things for the application layer: tool use, the ability to summarize, the ability to limit themselves to what's in the context. The engineering of these systems has grown out of all proportion, more than the scale-building. Engineering after the fact.
+
+## This is our moment
+
+So the message is: the application layer is actually our moment. It's the moment when what starts to matter is, given the model, what software you put around it, what you make it do, whose hands you put it in. Building artificial intelligences today is the analog of building websites in the 2000s. Exactly the same.

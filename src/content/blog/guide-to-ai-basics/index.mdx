@@ -1,0 +1,66 @@
+---
+title: 'Guide to AI Basics'
+description: 'A plain-language tour of the terms you keep hearing: model, agent, RAG, MCP, GPUs and data centers, and the Cheshire Cat.'
+date: 2025-07-06
+tags: ['ai', 'llm', 'agents', 'mcp']
+image: './cover.jpg'
+videoId: 'JHO-IpPdDsw'
+duration: 'PT9M43S'
+authors: ['pieroit']
+---
+
+import VideoEmbed from '@/components/VideoEmbed.astro'
+
+<VideoEmbed url="https://www.youtube.com/embed/JHO-IpPdDsw" />
+
+You hear a lot about artificial intelligence, but the terms confuse you. Here is a list of the concepts that come up most often, so I can give you a hand understanding what is going on.
+
+## The model, or large language model
+
+What is this blessed model? The model is one part of artificial intelligence, and it is the most interesting part, because it is the piece that acts as the language engine, that uses visual language, that manages to interpret images.
+
+Why are they different from the classic programs you run on your computer, like the calculator? This is the whole concept of the model: they are not programs written by people, they are simulations of nervous tissue, neural networks. There are neurons inside, with connections, all simulated, and the main property of these models is that they can learn from data.
+
+GPT learned language not because we wrote the rules of language and the meaning of every word into it, but because we passed Wikipedia and all the text on the internet in front of it twenty times over, and it extracted the patterns of language on its own. As a model, it can approximate, it can continue language. It is a kind of language engine, for both text and images. The model is the statistical part, the part that learned from data, the part we do not control directly. It is the most interesting part, and above all it is the part that unlocked all the most interesting AI applications we are seeing.
+
+## The agent
+
+An agent is a piece of software, a program, a service, like many of the IT services you know and use every day. What makes an agent special? An agent is a program that has a language model inside it, the famous language model, so it can handle language. Not only that: this program, alongside the language module, also has a set of operations it can perform, so it can do interesting things for you, like turn on my boiler, save this file, send an email to Peppino.
+
+How does it do it? The model that produces language receives as input the conversation it has had with you. The user said this, you said this, the user said this, and at some point the user says send an email to Peppino. And within the prompt, within the instructions, within the input sent to this language model, it also says: to satisfy the user's requests you may choose from a set of operations: send mail, turn on boiler, open door. The language model, which on its own only produces language, chooses which action to take.
+
+So the output of the neural network in this case will be send email, the command I want to launch, and the input is Peppino, and so on. From outside, the program that sent the input to the language model reinterprets it and actually sends the email. So an agent is a way of wrapping the language choices of the model inside a classic program made of an archive of predefined operations. Model plus operability, doing things in the world. The choices about what gets done are delegated to the model itself. That is the concept of an agent. It all revolves around this.
+
+## RAG
+
+The third concept is RAG, which stands for Retrieval Augmented Generation. As with all technical, scientific things, the name looks terribly complicated. It is another useful piece of jargon, but useful it is.
+
+What are we doing here? We want to make our model, and it is always the model that is the protagonist, able to know things that were not actually in the original training data. Wikipedia does not say that my friend Michela is into pineapple pizza. So when I go to my AI, which contains the model as one of its parts, and I ask what Michela's favorite pizza is, it does not know.
+
+So what do I do? Every time I send a query to the system, the model again sees the whole conversation as input, but there will also be, always inside the input I send, a context of information that may be useful for the answer. This context is built from queries and searches run against databases, against the entire web the way Perplexity or ChatGPT Search do, or against personal archives of some kind.
+
+So the language module finds itself looking at the conversation, the question, and something like: what is Michela's favorite pizza? Context: the user said twenty days ago that Michela's favorite pizza is pineapple pizza. These are pieces of information pulled from databases or the web and inserted into the model's input, right next to the conversation and the latest request, so that it says: ok, this is the conversation, this is the context. It does nothing more than read the potential answer from the context and adapt it to the conversation. That is RAG.
+
+## MCP
+
+Another concept you hear about more and more is MCP. The acronyms are starting to pile up, and this one is a protocol. Why is it important to know that protocols are being born?
+
+A protocol is a set of rules that govern communication between us, computers, and artificial intelligences. MCP describes specific rules and standards to respect, so that we can all adapt to these technologies and so the various pieces talk to each other. It is a bit like when you pass a friend a link on WhatsApp and in front of it there is https and the rest of the address. That is the HTTP protocol for the web, a set of rules we respect so that any page on the web can be passed to anyone. If anyone has a browser, or a phone with a browser on it, they can see that document.
+
+MCP is the same idea, but made specifically so that every AI containing a model has a standard that governs how actions are described, and how this system goes and looks up actions in various places on the web. So imagine: instead of distributing little pages on the web, we are distributing resources that AIs can read, and operations they can launch. A bit like turn on the boiler, from before.
+
+## GPUs and data centers
+
+Something else you will hear about often is GPUs and data centers. Why do people talk so much about GPUs, about graphics cards, in this context? They are chips that sit in computers, typically used by kids who play a lot of video games, and they are built specifically to deliver fast graphics.
+
+Why are GPUs involved in AI? Because, just like graphics, the calculations of these neural networks, these simulations of nervous tissue, need lots of calculations in parallel. Instead of doing one lightning fast calculation at a time, these neural networks benefit from having lots of operations, maybe even done slowly, but on many separate tracks in parallel. This is needed to compute the activation of these neurons between one layer of the network and the next. The passing of information is matrix multiplication, and that is why people talk so much about GPUs.
+
+You need so many of them, such huge resources, both to train and to run these models, that there is an entire giant market for GPUs. The one who has really made money from AI so far is Nvidia, which sells these cards. And around the world they are building enormous data centers. To be clear, one gigawatt data centers, and they are building dozens of them around the world. A one gigawatt data center is a kind of city that contains all these servers with these graphics cards, and it consumes as much energy as a city of 500,000 to a million people. It is basically building a huge warehouse from scratch that consumes as much electricity as Naples, just to run the AIs.
+
+## The Cheshire Cat
+
+To finish, this one you will hear mainly from me and from many others in Italy and nearby: the Cheshire Cat. What is the Cheshire Cat? It is the first open source framework for creating artificial intelligences.
+
+What does framework mean, and what does open source mean? Open source means it is free, like WordPress, like Linux. Same philosophy: we made it for free. And it is called a framework because it is a half finished thing. You take the Cheshire Cat and, with plugins and by writing a bit of code, or with a friend nearby who does it for you, you can shape it to do specific AI tasks. For example, you can build the AI that takes the orders for a pizzeria, or the one that tells potential visitors the opening hours and ticket prices of a museum, and so on.
+
+I hope this was useful. Peace.

@@ -1,0 +1,40 @@
+---
+title: 'Cheshire Cat AI - Version 2 PREVIEW'
+description: 'A first look at Cheshire Cat version 2: multi-chat, multi-agent, context-driven, MCP-connected, and still API first, built entirely around plugins.'
+date: 2025-10-20
+tags: ['cheshire-cat', 'agents', 'open-source', 'mcp']
+image: './cover.jpg'
+videoId: 'Nv4wTdCzhEw'
+duration: 'PT5M40S'
+authors: ['pieroit']
+---
+
+import VideoEmbed from '@/components/VideoEmbed.astro'
+
+<VideoEmbed url="https://www.youtube.com/embed/Nv4wTdCzhEw" />
+
+Hello kittens. Let me show you a preview of Cheshire Cat version 2. For those of you seeing this for the first time, this is an open-source framework that lets you easily build AI agents. RAG, retrieval augmented generation, and memory are included. You can have multiple agents here, and you can have plugins, with a lot of community-made plugins available. I have installed just three plugins, which I am using to develop. So let's see how it goes.
+
+## Agents, tools, and multiple chats
+
+I am using GPT-4. Here I just configured OpenAI, but you can use any language model, from Anthropic or a local one too, vLLM, any kind of runner you want to use, of course.
+
+When you use tools, you are going to see which tool you used, what the output of the tool was, and the final reply. You can combine tools: get the weather in Rome for tomorrow and then send it via email to friend@example.com. You will see the cat first using the get-weather tool and then sending an email to my friend. Here you see the arguments to the tool, the inputs to the tool.
+
+You can have many agents here. This is a StoryBrand agent I developed to work on some copy for a website, one that automatically creates the copy and then posts it to the website, so the site is updated automatically. So you can do a lot of stuff. You can also create a new chat profile.
+
+## Contexts and connectors
+
+The really new thing is that it is multi-chat and multi-agent, but you have already seen a lot of that. What is new is that each chat can be associated with a context, which you will find listed here, like this demo context. And in a context you can easily change the system prompt, you can add files and resources of any kind, you can upload any kind of file, and the plugins will decide how to use these files to enrich the context.
+
+Then there are connectors, which are MCP servers. Here I added a local MCP GitHub. Let me show you another context. In this one, for example, I have GitHub and I have a local MCP server that works on a folder on my system, so I can produce files, work on them, and then send them around using the agents.
+
+## Where it is going
+
+So this is a little preview. The first stable version is coming up around the end of the year, but you can already check what we are doing on the repo. Version 1 of the cat has been downloaded more than 80,000 times all over the world. That was version 1. Version 2 is coming, and let me tell you, it is going to be really powerful and flexible.
+
+You can add plugins, and inside plugins you have one or more agents, one or more language models, one or more embedders for RAG. You can have vector memories, graph memories, file-based memories. It is entirely handed over to the plugins to decide what they want to do with the stuff you throw around.
+
+And, as is Cheshire Cat tradition, the framework is API first. The whole frontend you saw is just a single-page application using endpoints. In your installation you have authentication, chats, context, and all of this is strictly typed and validated. For example, a context has a list of chat instructions, a list of MCP servers, a list of resources. You have settings, both global and user-based. You can manage plugins, and you can add endpoints from plugins, so you can extend the endpoints the framework offers to other apps you are building: your invoicing app, your image generation app, anything. You can add custom authentication with single sign-on, so you can hook this up to your identity provider, be it Google, LinkedIn, Keycloak, Authelia, whatever.
+
+Share this video with a friend. Leave me a like. Put a little star on the framework. And thank you for listening. Bye.

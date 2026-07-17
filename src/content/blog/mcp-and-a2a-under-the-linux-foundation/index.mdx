@@ -1,0 +1,40 @@
+---
+title: 'MCP and A2A under the Linux Foundation'
+description: 'Both MCP and A2A now live under the Linux Foundation, and here is why the AI field badly needs these protocols to finally unify.'
+date: 2025-12-11
+tags: ['mcp', 'protocols', 'agents', 'open-source']
+image: './cover.jpg'
+videoId: 'A395gIZ4s2M'
+duration: 'PT4M45S'
+authors: ['pieroit']
+---
+
+import VideoEmbed from '@/components/VideoEmbed.astro'
+
+<VideoEmbed url="https://www.youtube.com/embed/A395gIZ4s2M" />
+
+If you're an AI developer, you're probably feeling a lot of frustration, because the field is too fragmented. There are too many moving parts. Everybody talks about AI, everybody wants to do and use AI, but building on AI requires that something is stable, so you can release stable stuff that people actually use.
+
+For this reason, protocols are really important. I'm happy to read that Anthropic decided to donate the Model Context Protocol to the Linux Foundation, and a few months ago Google also donated the A2A protocol to the Linux Foundation. So maybe in 2026 we'll see the protocols officially unified. I hope so. Let's talk about the differences between these two protocols.
+
+## MCP: integration inside the agent
+
+If you haven't heard about it, MCP from Anthropic is the most successful, and it's not really an AI protocol per se. It's more of an integration protocol to let your AI agents access resources, tools, and prompts.
+
+People around the world publish MCP servers. There are more than 10,000 public MCP servers. Those servers just expose tools, resources (which are basically files and JSON content mostly), and reusable prompts and prompt templates. Tools are functions the language model can decide to call at a certain point during the agentic loop, during execution.
+
+So you write an MCP client, which is the part of the architecture where the language model usage resides, and those MCP clients can call MCP servers, which just expose resources, tools, and prompts to clients. It's way harder to write a client than to write a server. And in this light, Anthropic had this vision of a mostly centralized AI agent, with the distribution spread across the resources and tools. The AI is basically one, and all those microservices around it in the cloud just offer resources to it.
+
+The protocol does not say how an agent should communicate with another agent, and even less how the agent should communicate with a browser or a mobile app. So MCP is strictly intra: it's inside the agent, to use resources and tools.
+
+## A2A: communication between agents
+
+The A2A protocol by Google, which had way less success but is beautiful nonetheless, occupies itself with describing how the whole agent should communicate with other AI agents, or even clients, people, mobile apps, whatever. So MCP is intra-agent, inside the agent, for integration with resources, and A2A is inter-agent.
+
+The nice thing about A2A is that there's the concept of a task. An agent can require a task to be done by another agent, and can ask whether the task is done or not and why not, and receive notifications when it's done. It's more goal-oriented, and inter-agent, I repeat.
+
+## Two halves of an agent
+
+So these two protocols cover two important parts of an AI agent: communication with the rest of the world, and integration with classic computing and resources. I hope in 2026 we'll see a unification, because frankly we're tired of the moving parts. If you code in AI, you know it's a mess. Too many libraries, too many missing standards. So let's hope for the best.
+
+And by the way, if you want to see my Python framework, this is the one. It's famous in Europe. Bye.

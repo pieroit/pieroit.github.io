@@ -1,0 +1,40 @@
+---
+title: 'What Is the Difference Between Tool and Resource in MCP?'
+description: 'A tool is a function the language model chooses to call; a resource is something read into context. Here is how the three MCP constructs actually differ.'
+date: 2025-10-18
+tags: ['mcp', 'agents', 'protocols', 'cheshire-cat']
+image: './cover.jpg'
+videoId: 'WX9ZNJPYSCs'
+duration: 'PT5M12S'
+authors: ['pieroit']
+---
+
+import VideoEmbed from '@/components/VideoEmbed.astro'
+
+<VideoEmbed url="https://www.youtube.com/embed/WX9ZNJPYSCs" />
+
+Hi folks. Our friend Federico writes: "I don't understand the practical difference between a resource and a tool in the MCP protocol, the Model Context Protocol." Let's start with the tool, which is the easier one to grasp. In fact, the MCP servers you see out there are all collections of tools. Few people use resources and prompts, the other two constructs of the server.
+
+## A tool is a function the model chooses to call
+
+A tool is basically a function. The thing that sets a tool apart from everything else is that it's the language model that chooses which tool to use. In the prompt to the language model there's a list of tools: turn on the light, turn off the light, open the boiler, send the email, go check the weather forecast. These are all functions written by human beings that do concrete things, connecting to databases or external services, whatever it may be.
+
+But what makes it a tool for the AI, rather than just a function? It's the fact that the tool descriptions and the arguments they take end up inside the prompt, and it's the language model that chooses which tool to use. And if you have a so-called agentic loop, a loop over these decisions, you can make your agent pick which tool to use, the tool gets executed, the result flows back into the conversation in the next prompt, and it keeps going. That's how systems like Cursor, Lovable and all the rest manage to push through tasks that get more and more complicated. Now, they won't tell you these things get stuck every five minutes, but the technology is still new. We still have to figure out how to make them run in a stable way.
+
+So the tool is a function whose execution is chosen by the language model. It's as if you tell the model: "you can do a bunch of things, tell me which one you want to do, if you want to do it."
+
+## A resource is something read into context
+
+A resource is not a function. It's something you read. There's a resource: it can be a file, a JSON, an Excel sheet, an audio, a video, even a piece of graphical interface. And that makes things much more interesting.
+
+And who chooses which resources to read, and where to put them? Unlike tools, which are strictly there for the language model to use (the tool choice is the model's, but then the tool actually gets launched by your runtime, your software, the MCP client), resources cut across all three constructs. Those three constructs are tools, resources and prompts.
+
+Prompts are simply a collection of prompts. Tools get chosen by the language model. Prompts you typically put in front of the end user of the application, to offer them ready-made prompts they can fire off. The famous prompt libraries, and Claude's latest skills feature, are based on MCP prompts, I believe.
+
+And then there are resources, which are neither chosen by the language model, nor necessarily by the user, nor only by the application running everything. Resources are transversal. If you're building an agent that lets the user upload files, you can treat those as resources. If your application is an agent sitting inside an e-commerce that constantly needs files, things to read, you can treat those as resources. You can even create prompts where you ask the language model to tell you which resources should be read at a given moment. So resources are essentially read-only, and they aren't the exclusive domain of the language model. Resources are a way to move information around among people. I hope that came across.
+
+## The Cheshire Cat, version 2
+
+I can confirm that the Cat version 2, coming out roughly by the end of the year, is heavily based on MCP. There are tools, there are prompts, there are resources, and you'll have an MCP client available directly inside the big Cat: multi-agent, multi-conversation. Writing an agent has become basically four lines of code, and all these constructs, tools, resources, prompts, are dead easy to use, and you can launch them wherever you like.
+
+I can't wait to show you. Right now there's a whole piece that's broken, it needs fixing, but it already works, and I'll update you soon. I'll come back at it, grab a few stars on GitHub. If you want to contribute, to test it, I'll make some tutorial videos too. Let's also see if the core contributors are up for this next journey.

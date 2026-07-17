@@ -30,6 +30,15 @@ const BIN = join(__dirname, '.bin', 'yt-dlp')
 const WORK = join(__dirname, '.work')
 const BLOG_DIR = join(ROOT, 'src', 'content', 'blog')
 const CHANNEL = 'https://www.youtube.com/@PieroSavastano/videos'
+// Videos deliberately skipped forever (no post). Maintained by hand; see the
+// file's header. Excluded from the channel scan like already-published videos.
+const SKIP_FILE = join(
+  ROOT,
+  '.claude',
+  'skills',
+  'video-to-blog',
+  'skip-videos.txt',
+)
 
 // ---------- args ----------
 const argv = process.argv.slice(2)
@@ -70,6 +79,18 @@ async function ensureBin() {
 function videoId(s) {
   const m = s.match(/(?:v=|\/embed\/|youtu\.be\/|\/shorts\/)([\w-]{11})/)
   return m ? m[1] : s
+}
+
+// ---------- deliberately skipped videos ----------
+// One videoId per line in SKIP_FILE; `#` starts a comment. Missing file = no skips.
+function skippedVideoIds() {
+  const ids = new Set()
+  if (!existsSync(SKIP_FILE)) return ids
+  for (const line of readFileSync(SKIP_FILE, 'utf8').split(/\r?\n/)) {
+    const id = line.replace(/#.*/, '').trim()
+    if (/^[\w-]{11}$/.test(id)) ids.add(id)
+  }
+  return ids
 }
 
 // ---------- existing posts ----------
@@ -219,9 +240,12 @@ if (explicit.length) {
     .map((s) => s.trim())
     .filter((s) => /^[\w-]{11}$/.test(s))
   const published = publishedVideoIds()
-  ids = all.filter((id) => !published.has(id)).slice(0, limit)
+  const skipped = skippedVideoIds()
+  ids = all
+    .filter((id) => !published.has(id) && !skipped.has(id))
+    .slice(0, limit)
   process.stderr.write(
-    `Channel uploads (incl. Shorts): ${all.length} videos, ${published.size} already posted, processing ${ids.length}\n`,
+    `Channel uploads (incl. Shorts): ${all.length} videos, ${published.size} already posted, ${skipped.size} on skip-list, processing ${ids.length}\n`,
   )
 }
 

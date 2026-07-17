@@ -1,0 +1,34 @@
+---
+title: 'The Truth About the TOON Format'
+description: 'The new TOON format promises to save you tokens at scale, but you spend more tokens explaining it to the model than you ever save - and no, you are not scaling anyway.'
+date: 2025-11-19
+tags: ['llm', 'ai', 'opinion', 'protocols']
+image: './cover.jpg'
+videoId: 'IMrKQyClqHo'
+duration: 'PT4M6S'
+authors: ['pieroit']
+---
+
+import VideoEmbed from '@/components/VideoEmbed.astro'
+
+<VideoEmbed url="https://www.youtube.com/embed/IMrKQyClqHo" />
+
+Language models have seen millions and millions of JSON, CSV, XML and YAML documents - the popular data formats. Introducing this TOON thing means that somewhere you have to explain to the model how the format is built, which means you spend more tokens explaining the format the model has never seen than you would just using JSON. With JSON you save a few tokens. With TOON you may not save any at all.
+
+## "But at scale you'll notice the savings"
+
+The typical reply is: "Sure, on a single payload you save just a few tokens, but at scale you'll notice." At scale. So you have production systems running language models at scale, you have become a billionaire, you are building data centers, and you are worried about saving a handful of tokens because you have to handle millions of model requests? These are the same people who want to build scalable Kubernetes architectures for six users.
+
+Do not listen to these people. With the Cheshire Cat they made me lose months because I simply listened to them. Now, the moment I hear this "scalability from day one" approach, it is an instant middle finger. This is a crowd that only makes you waste time.
+
+## You spend more tokens on the format than on the data
+
+Almost none of the people celebrating this format that "scales" and "saves you tokens" are actually scaling. You spend more tokens stuffing the format description into the prompt than you spend actually using it. And then what? You wait for someone to fine tune the models for TOON too? Meanwhile the libraries, the parsers, the technical debt tied to all the formats we already use and have to orchestrate keep piling up, and we add yet another format nobody asked for - as if artificial intelligence weren't already fragmented enough and in desperate need of standards.
+
+MCP is certainly a great contribution toward standardization. TOON is definitely not. TOON only complicates things without delivering any real advantage. You do not need to scale, and you are trading a few saved tokens for a whole other set of costs. This stuff is a colossal load of nonsense. The favor everyone celebrating TOON on LinkedIn, and especially on TikTok, has done for me is to help me compile the list of people not worth listening to.
+
+## Models shouldn't be doing the math anyway
+
+One last point. People say: "But this way you put the table straight into the prompt, so the model knows in advance how long the table is, the columns, all of it." Language models should neither count nor do tabular calculations. There are tools for that. The model can see the structure of the tables, the schema of the SQL database, the shape of the data structures it works on, so that it can then use the tools - but the tools do the math, not the language model. What a pain.
+
+By the way, on the red channel I published two great videos. One is a talk I gave inside the halls of the Italian Senate, where I proposed a hands-on group experience to really understand language models - it lasts only ten minutes, take a look, it is interesting. The other is a deep dive of more than fifty minutes on Anthropic's study of introspection in language models. Thorough, no fluff. So if you have some time and you actually want to understand what introspection in a language model means, it could be a good starting point.

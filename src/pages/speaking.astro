@@ -1,13 +1,13 @@
 ---
-import { Image } from 'astro:assets'
 import Benefits from '@/components/Benefits.astro'
 import Breadcrumbs from '@/components/Breadcrumbs.astro'
 import CallToAction from '@/components/CallToAction.astro'
 import PageHead from '@/components/PageHead.astro'
 import Testimonials from '@/components/Testimonials.astro'
 import VideoEmbed from '@/components/VideoEmbed.astro'
-import Layout from '@/layouts/Layout.astro'
 import { CONTACT_FORMS } from '@/consts'
+import Layout from '@/layouts/Layout.astro'
+import { Image } from 'astro:assets'
 ---
 
 <Layout>
@@ -31,51 +31,52 @@ import { CONTACT_FORMS } from '@/consts'
         width={1280}
         height={720}
         class="object-cover"
-        />
-      
-      <Benefits
-      items={[
-        {
-          title: 'Host a tech influencer',
-          description:
-          "I'm a trusted face in AI, with a 10k+ following on TikTok / YouTube / LinkedIn.",
-          icon: 'lucide:youtube',
-        },
-        {
-          title: 'A pleasure to attend',
-          description:
-          'High-energy delivery and live interaction, based on a long experience in improv theatre.',
-          icon: 'lucide:drama',
-        },
-        {
-          title: 'Hear the truth',
-          description:
-          '20 years hands-on in the AI field. Your people will hear the true story.',
-          icon: 'lucide:bot',
-        },
-        {
-          title: 'Complex made simple',
-          description:
-          'The toughest concepts in AI made accessible, actionable, and memorable.',
-          icon: 'lucide:lightbulb',
-        },
-      ]}
       />
-      
+
+      <Benefits
+        items={[
+          {
+            title: 'Host a tech influencer',
+            description:
+              "I'm a trusted face in AI, with a 10k+ following on TikTok / YouTube / LinkedIn.",
+            icon: 'lucide:youtube',
+          },
+          {
+            title: 'A pleasure to attend',
+            description:
+              'High-energy delivery and live interaction, based on a long experience in improv theatre.',
+            icon: 'lucide:drama',
+          },
+          {
+            title: 'Hear the truth',
+            description:
+              '20 years hands-on in the AI field. Your people will hear the true story.',
+            icon: 'lucide:bot',
+          },
+          {
+            title: 'Complex made simple',
+            description:
+              'The toughest concepts in AI made accessible, actionable, and memorable.',
+            icon: 'lucide:lightbulb',
+          },
+        ]}
+      />
+
       <VideoEmbed
         url="https://www.youtube.com/embed/vai0IvrKS-k?si=xCARLwj9UP9GU4FF"
       />
 
       <Testimonials />
 
-      <VideoEmbed url="https://www.youtube.com/embed/3l5b4VYBWfU?si=BzRO_cmGrrGIJrgc" />
-      
+      <VideoEmbed
+        url="https://www.youtube.com/embed/3l5b4VYBWfU?si=BzRO_cmGrrGIJrgc"
+      />
+
       <CallToAction
         title="See you at the venue"
         cta="Get Quote"
         href={CONTACT_FORMS.speaking}
       />
-
     </div>
   </section>
 </Layout>

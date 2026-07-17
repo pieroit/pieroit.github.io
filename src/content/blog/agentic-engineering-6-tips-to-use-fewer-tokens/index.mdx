@@ -1,0 +1,48 @@
+---
+title: 'Agentic Engineering - 6 Tips to Use Fewer Tokens'
+description: 'Six practical habits to spend fewer tokens and keep your coding agent sharp: clean context, package skills, and ask precise questions.'
+date: 2026-04-06
+tags: ['agentic-coding', 'skills', 'mcp', 'ai']
+image: './cover.jpg'
+videoId: 'TJr5vfFCtzQ'
+duration: 'PT6M8S'
+authors: ['pieroit']
+---
+
+import VideoEmbed from '@/components/VideoEmbed.astro'
+
+<VideoEmbed url="https://www.youtube.com/embed/TJr5vfFCtzQ" />
+
+Here you go: six practical tips to save tokens. Whether you use the API or pay for subscriptions, these let you save a bit of money and keep the agent's mind fresh. Short context, fresh mind.
+
+## 1. Clean the context often
+
+This has a double advantage: it saves you tokens and it makes the conversation leaner and tighter, which stops the language model from going foggy. You can clean the context especially in spec-driven development. Once the spec is written, once the agent has planned and written down in a file what needs to be done (the implications, the files to touch, everything it needs for context), it goes into a file. You clean, then you restart it with a fresh mind, having it read the spec directly, where it has all the references it needs.
+
+## 2. Package repetitive flows into skills
+
+Collect repetitive flows into skills, and possibly MCP servers. When you find yourself doing things very often, it's worth packaging them and making them modular, even if you work in a team, so they become skills that can be easily invoked and that carry the accessory context the agent needs to do certain things.
+
+When these flows crystallize even further, turn them into scripts inside the skills. It's not like we have to use the language model for stuff that can be scripted, because it has a very well defined flow. When things crystallize, script it, and the skill just serves as a small wrapper to use conversationally what is ultimately a script with arguments.
+
+## 3. Don't keep unused MCP servers plugged in
+
+Keep plugged in only the ones strictly necessary. Just loading the GitHub MCP alone gives you dozens of tools that do nothing but fill up the context. You use one once in a blue moon, so turn them on only when you need them, or use git from the command line the way you've done for the last 30 years.
+
+## 4. Put recurring context in the project file
+
+If you find yourself often repeating things to the agent ("why doesn't it get this? Why do I have to repeat this every time?"), it's time to provide that extra context directly in the project file (CLAUDE.md, or AGENTS.md), so that every time the agent starts it already knows those things and you don't have to repeat them and burn conversation turns feeding it context, because it has it from the start.
+
+Along with this starting context, it's also useful to define the tech stack you're using, the architectural and stylistic constraints to respect, all the various gotchas. Anticipate them so it already knows. Possibly also a list of the main project files, from which it can understand how everything else works.
+
+## 5. In conversation, avoid vague questions
+
+Not just in the project file, but right there in conversation, let's avoid questions that are too vague, too open. Because if I go to an agent and say "do this thing," just to figure out what I mean and how the thing should be implemented, it has to fire off 50 tools, read 20 files, and the context fills up before it's even written a single line of code.
+
+So when we stand in front of the agent: precise, contextualized questions where you directly provide the references for how to gather context. For example: "look, we need to do this, let's write a spec, the main files are these, and I want a small class added that does this, with these characteristics." You still keep the craft. Sure, the agent writes the code, but if you tell it directly what to do and what to touch, you use less context, it does it faster, it fails faster, and everyone's happier.
+
+## 6. Use sub-agents
+
+Use sub-agents, because those get launched separately. They consume tokens, but the tokens don't then become part of the main agent's main flow. So even if you use tokens, the context doesn't fill up too quickly.
+
+In general, folks: good agentic engineering. This time I'll spare you, because a lot of people complained, and I absolutely will not pitch my commercial initiatives. This time I definitely won't. I will not tell you about my new corporate course that's built specifically for technical teams who want to learn to use artificial intelligence professionally for writing and maintaining code. I've already run it several times around Italy, and the feedback is excellent. If you're interested, write to me, tell me whether you want it live or remote, a bit of background, and I'll make you a proposal.

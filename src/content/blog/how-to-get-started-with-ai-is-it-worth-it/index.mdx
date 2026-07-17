@@ -1,0 +1,52 @@
+---
+title: 'How to Get Started with AI? Is It Worth It?'
+description: 'It is worth it precisely because everything is still fragmented and uncertain, and here is the concrete path in: mess with the online services, then learn context, memory and tools.'
+date: 2025-10-16
+tags: ['ai', 'agents', 'llm', 'cheshire-cat']
+image: './cover.jpg'
+videoId: 'I4uTFDGIr54'
+duration: 'PT8M58S'
+authors: ['pieroit']
+---
+
+import VideoEmbed from '@/components/VideoEmbed.astro'
+
+<VideoEmbed url="https://www.youtube.com/embed/I4uTFDGIr54" />
+
+You want to get started with artificial intelligence. You do not know where to begin, and you do not know if it is worth it. I would like to answer both of those questions.
+
+## Is it worth it?
+
+Let us start with whether it is worth it, and I will do it with an anecdote. I met a woman who I think worked for a conference, and she said, "look, people don't actually want to pay through these chats, the traditional web and the apps are much stronger, I think we are wasting a lot of time." And I told her: when the dot-coms during the bubble first proposed payments over the web, people were absolutely against it. A few months later people were happily sending their credit card number, name, surname and security code over web services, and there was not even HTTPS. Just to make you understand how fast this stuff moves.
+
+It is worth it, and it is worth it precisely now, when everything is so fragmented and so unclear, unless you are already deep inside where things are heading. Because if you make the leap now and start reasoning about it, and above all start combining the things you already know and are good at with this AI stuff, and this holds for people who do not write code too, then you get a clear advantage on the curve. If you wait for people to tell you "yes, yes, AI is worth it," it is too late. If you wait for someone to hand you certainty, you have missed it. You have to do it while there is uncertainty.
+
+So ask yourself how much you enjoy it, how much you are willing to stay on the edge of the technology, how much you genuinely love innovation. Because the people who actually work with this stuff certainly do not call it innovation. They are so deep in it that they talk to you about the substance, the pieces it is made of, the problems, the initiatives. Is it worth it? Absolutely yes. In my view, we will look back at today's websites and phone apps the same way we look at an old Windows 98 program, the same way we look at a terminal. This is my invitation. It is a lot. I cannot explain everything you can end up doing, because I could write a book about it, but a whole range of possibilities opens up around human-machine interaction that were unknown until a few years ago. It is all about automation, of course, and this automation is wild, not total. You have to plan and design systems where the human stays in the loop, but that is another topic entirely.
+
+## Where do I actually start?
+
+It is worth it, in my opinion. The answer, though, is yours. Now let us move to the second question: where do I actually begin?
+
+A first way to start, without writing a single line of code, is to get your hands dirty with the services that are already online, to understand what they can and cannot do. And resist the temptation I see in so many technicians and buddies to write off the entire AI world just because they could not get it to do that one thing they had in mind. That is a bit of sour grapes. Either they could not do something, or they genuinely asked too much of these systems and concluded they are worthless. These people sabotaged themselves. They pulled themselves out of one of the strongest changes in the history of human technology. Too bad for them. So you study the online services. You see what they do.
+
+## Getting technical: the basic flow
+
+When you want to start tinkering more on the technical side, you can lean on the APIs, the network services that vendors like OpenAI, Claude, Peppino and Google offer to make calls to the language model and get responses back. They are all more or less similar, and there are libraries like LangChain, LlamaIndex, LiteLLM and a thousand others that hide the complexity of these vendors and these APIs. With four lines of script code you can talk to the language model, fire off prompts, fire off conversations that it completes, and build yourself little chats. This is just to understand the basic flow.
+
+Once you have covered this basic flow, you will quickly realize there are two branches.
+
+## Branch one: memory
+
+The first branch is dealing with the memory of this system, because the language model, as they call it, is stateless by itself. It has no memory. The memory has to be injected every single time into the prompts. There is a system prompt where you say "this is who you are and what you do." That is the context, and from there you get into context engineering, and then the little chat messages.
+
+This context is essentially made of two big strands. One strand is memory, or RAG, retrieval augmented generation, which means putting contextual information into the prompt so the model can complete the conversation and answer the questions as well as possible. For example, you want your bot to answer the frequently asked questions? Then you put the questions and answers into the prompt, whatever you want it to respond about. You can also do targeted searches, obviously by analyzing the list of messages, fishing from text databases, from elasticsearch, from solr, from vector DBs like Qdrant, Chroma, Weaviate. You pull out the relevant things and drop them into the prompt. It is a loop, a database query, and you have to compose a string. RAG, out there you hear it described as impossible and unspeakable, but it is a trivial thing once you have seen it, so do not be scared.
+
+## Branch two: tools and actions
+
+The other strand of things you can do with context is inserting the so-called tools, which are the operations the language model must be able to choose to perform. For example: turn on the light, turn off the light, send an email. These are called tools because they are activities, they are actions, and they have side effects, meaning they actually hit databases, home automation, the outside world. And with that you have covered the two big strands of context: memory and actions.
+
+The world of agents is nothing more than a loose, broad name given to a family of software that composes this context. An agent is a loop of calls to the language model, where at every loop you put the relevant things and the selectable tools into the context, you send the call, and it answers. If it answers that it wants to use a tool, you execute the tool from your software, because the language model cannot execute absolutely anything. It can only tell you what to execute, as a string, and then this gets handled automatically by the API anyway. You send it the list of tools, and the response says "launch tool X with arguments Y and Z." This stuff is easy. Easy. Do not let it scare you. What is hard is designing systems that truly meet people's needs. That has always been the complicated part, because to meet people's needs you have to know their problems and their habits well, and that is where the economic possibilities open up.
+
+## A shortcut to being operational
+
+After that, if you want to start with something that is already online, that you can easily put online, that has a plugin system with lots of community plugins, that is open source and free so you do not have to pay anyone, and that you can customize easily, there is the Cheshire Cat. It is a project I started myself back in early 2023, and version 2 is coming out soon. Version 2 is going to be a beast. But in any case a system like the Cheshire Cat, and of course there are plenty of others in the open source world too, so you run no risk, lets you skip the low-level construction of these objects and go straight to making them operational, shaping them so they are actually useful to someone. You can do this. Go.

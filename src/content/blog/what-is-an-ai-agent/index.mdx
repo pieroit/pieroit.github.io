@@ -1,0 +1,64 @@
+---
+title: 'What Is an AI AGENT'
+description: 'A plain-language explainer: an agent is software that wraps a language model, building the prompt with retrieved context and tools and interpreting the response before it reaches you.'
+date: 2025-08-09
+tags: ['agents', 'llm', 'ai', 'mcp']
+image: './cover.jpg'
+videoId: 'VWotOVUWGAI'
+duration: 'PT10M'
+authors: ['pieroit']
+---
+
+import VideoEmbed from '@/components/VideoEmbed.astro'
+
+<VideoEmbed url="https://www.youtube.com/embed/VWotOVUWGAI" />
+
+Everyone's talking about AI agents and you don't get it, you're confused. What does it even mean? Don't worry, I've got you.
+
+## Model versus agent
+
+The first thing to understand is the distinction between model and agent. The model is the neural network, a simulation of nervous tissue trained, in this era, essentially to take text as input, the prompt, and produce a response, which is more text.
+
+An agent is a broad family of programs. Picture it as an extra layer of onion around the model. It's software that internally does the prompting of the language model and interprets the response. So when you're interacting with an AI agent, you're not talking directly to the neural network, and it's not the neural network answering you directly. There's a piece of software, a program, in between.
+
+This software mainly takes care of building a prompt. It's not the prompt, that's what you give it. This program adds things to the prompt, and above all it then interprets the responses, so that the response doesn't reach you directly but might be used to do other things first.
+
+## An example: the pizzeria agent
+
+Let's start with an example. We want to build an agent that supports the customers of a nice pizzeria. It has to take orders, present the menu, tell you the opening hours, where the pizzeria is, where it delivers. Something you'd normally build a website for. On top of the website, now you also have the option of building an AI agent.
+
+So when you tell the agent, "Do you have the boscaiola? Can I add ham, can I ask for ricotta in the Neapolitan crust?" what you say, the prompt and the conversation up to that point, does not go straight to the neural network, straight to ChatGPT, Llama, Qwen, or whoever. First, the response is handled by the software, by the agent, which internally does have the language model but calls it later. It does things before invoking the language model. You are not talking directly to the neural network.
+
+## Retrieval-augmented generation
+
+And what does it do? It takes your question, your query, and goes off to interrogate some databases: the menu, which is the database of menu items, text files, the company database. It goes and retrieves information relevant to what you asked, grabs it, and adds it to the prompt.
+
+This is called retrieval-augmented generation. It means the language model produces its response, but that response is retrieval-augmented: you put additional context information into the prompt beyond what the user stated, so the language model has more to work with when answering.
+
+How else would ChatGPT know that your pizzeria offers the boscaiola with a high crust and ricotta? It knows because when you ask, what reaches the language model isn't only your question, but a prompt that says: this is the conversation so far, here's the context, the pizzeria menu includes the boscaiola, and there's the option of a ricotta crust for an extra 2 euros. The language model, trained on text, has no idea about your pizzeria's menu, but it's a linguistic device, a language generator, and seeing the context information and your question it just has to reorder the words, without you touching the connections of this neural network. That's retrieval-augmented generation.
+
+When the language model answers, having read the context in the prompt, it says, "Look, for another 2 euros you can get the pizza with a ricotta crust," and hands you that response. Except that response doesn't reach you directly either. So both on the way in and on the way out, an agent encapsulates the language model: it does things to the prompt to add context, and it does things to the response to rework it before it reaches you.
+
+For example, I go to this pizzeria bot and say, "I want to buy a Jeep." It might answer that. But you can put filters in and out, anywhere you like, so that if you're off-topic the bot doesn't respond. That's part of agents too.
+
+## Tools: making the agent actually do things
+
+That's the memory, the retrieval, retrieval-augmented generation. The other aspect of agents, beyond this contextual memory that in practice comes down to enriching the little prompts sent to the language model, is a component of operativity: the so-called tools.
+
+"I want to order a pizza," or "send the menu to this email." Here a text response isn't enough, because the bot actually has to do something: kick off an order, send an email, update a database. In this case, in the initial prompt, on top of adding context information, we also add, again in the prompt: this is the conversation, this is the context, and you have available a set of operations, so-called tools, which are extremely in fashion right now.
+
+A protocol was even born called MCP, particularly focused on tools and other things, standardizing exactly this part. In the prompt you say: you may use the following operations depending on what the user asks, send email, start order, and there's a list of the operations that can be chosen and the input they require.
+
+When the user, after this whole conversation about the ricotta-crust pizza, says, "Okay, place the order," the language model finds itself with a prompt containing the whole conversation, an informative retrieval text enriched with contextual information, and then this set of tools. Seeing the user say "go ahead, place the order," and seeing the "order pizza" tool in the prompt, it outputs: I want to use the "order pizza" tool with these inputs, pulling from the conversation everything that was ordered and passing it as input.
+
+So the language model always produces a string of text. What changes? This message it wrote, "I want to use order pizza, boscaiola, plus 2 euros for the ricotta crust," is not the response that goes to you directly. This response is interpreted by the software, by the agent, which encapsulates these functions and can actually execute them, because the language model only produces text, at most images. Seeing that the language model chose to run that operation, the agent launches it and actually starts the order, just like a normal pizzeria ordering site would.
+
+## Think of it like WordPress
+
+If you like, you can picture it a bit like WordPress. What does WordPress do when you request a page? WordPress has a template, a kind of empty skeleton of the site page, and based on the specific article you request it fills that HTML template with the content and serves it to you. An agent is similar, except instead of filling an HTML template, it has to fill a prompt and interpret the output of the language model to launch actual operations.
+
+## The agentic loop
+
+It doesn't stop there, because there's multimodality: in some cases images are involved. And above all, this querying of the language model can happen over several turns. This is the agentic loop: instead of querying the language model just once, I query it multiple times while the user waits, and I refine the response. I launch two, three, four operations, I do several retrievals. That, roughly, is the agent.
+
+I hope that made sense. Peace. If you want to learn how to actually build these things, get in touch, because I'm taking a corporate course around Italy.

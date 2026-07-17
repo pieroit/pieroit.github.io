@@ -1,0 +1,40 @@
+---
+title: 'Dynamic Agents in Cheshire Cat v2'
+description: "Most Python agent libraries treat the prompt, the model, the tools and the memory as static - and in Cheshire Cat v2 I think every one of those parts should be dynamic."
+date: 2025-12-09
+tags: ['agents', 'cheshire-cat', 'open-source', 'software']
+image: './cover.jpg'
+videoId: 'b_CYL0IelNc'
+duration: 'PT4M53S'
+authors: ['pieroit']
+---
+
+import VideoEmbed from '@/components/VideoEmbed.astro'
+
+<VideoEmbed url="https://www.youtube.com/embed/b_CYL0IelNc" />
+
+I have looked at six or seven AI agent libraries in Python, and I am about to tell you what, in my opinion, they all got wrong.
+
+Looking at the code, I see simple classes to represent an agent, and these classes take in the constructor the system prompt, a list of tools, and eventually a list of memory objects. I think this is not enough, and I think most of those parts should be dynamic.
+
+## The prompt is a function, not a string
+
+Let's start from the system prompt. You do not want your agent to have a static system prompt. You want your agent to rebuild and edit the system prompt at each iteration inside the agentic loop. So the prompt is not really a string. The prompt must be a function returning a string.
+
+The same goes for the language model. You do not want your agent to have one specific model that you constructed beforehand by handing over the API key for OpenAI, or for Anthropic, or whatever. You want primitives inside your agent to select the language model that is right for what the agent is about to do. So there has to be a list of language models, and methods to decide which one must be used at each step to do something. The same goes for the embedders, if you are using embedders.
+
+## Tools and memories should be retrieved, not assigned
+
+Now let's go to tools. I think it does not suffice to have a list of tools assigned statically to an agent. Instead, the agent should have a method that retrieves the set of tools relevant for the next iteration in the loop. Even better if the tools themselves are not just a list: they come out as a list to be used, for sure, but they are stored in a database specific for tools. Same goes for memories.
+
+So what you want your agent to do is to refine each of those parts, which turn out to be the main parts of the agent - the prompt, the language model, the eventual embedder, the set of memories, the tools. All of these must be dynamic.
+
+## What's coming in Cheshire Cat v2
+
+Since I maintain an open source framework called the Cheshire Cat, with version two coming at the end of the year, we already had a nice system for tool retrieval and for a dynamic prompt. But in this next version you can have multiple agents, for sure, and when you define an agent you will be able to override these methods so that each part can be dynamic too.
+
+If you just want to use a simple agentic loop to call tools, refine the prompt, maybe plan or whatever, there is a default agent that does that automatically for you. But you can also loop when it is necessary to loop, or go step by step as a workflow when you already know what the agent must do in a specific part of the task.
+
+Also, each agent is going to be able to call other agents. And I do not like the idea of having a super agent deciding which agent must be called for sub-tasks. That should be possible, for sure, but it should first be possible, in principle, to code the order, or how the decision on which agents to call for a specific task at a specific moment is made. More control - because most agent libraries that manage a set of agents diverge really fast and really badly, and they assume most of the agent parts are static, which I think we can do better than.
+
+So I invite you to take a look at the Cheshire Cat, version two coming at the end of the year. Bye.
