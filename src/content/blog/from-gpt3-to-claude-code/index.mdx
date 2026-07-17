@@ -13,11 +13,11 @@ import VideoEmbed from '@/components/VideoEmbed.astro'
 
 <VideoEmbed url="https://www.youtube.com/embed/6715ld96ejc" />
 
-A lot of people are confused about the difference between a model and an agent, and most aren't really seeing what has happened. So let me give you a historical perspective on the evolution from language models to agents. There have been at least three big jumps: 2020 with GPT-3, 2022 with ChatGPT, and 2025 to 2026 with Claude Code. This is a distilled walkthrough of the whiteboard talk.
+A lot of people are confused about the difference between a model and an agent, and most aren't really seeing what has happened. So let me give you a historical perspective on the evolution from language models to agents. There have been at least three big jumps: 2020 with GPT-3, 2022 with [ChatGPT](https://chatgpt.com), and 2025 to 2026 with [Claude Code](https://www.anthropic.com/claude-code). This is a distilled walkthrough of the whiteboard talk.
 
 ## 2020: language can be modeled
 
-Before 2020, language models were small. Then OpenAI published "Language Models are Few-Shot Learners" and the whole point was in one line: they trained GPT-3, a model with 175 billion parameters, ten times larger than any previous dense language model. They scaled all three axes at once: the size of the model, the amount of data, and the compute used to compress that data into the model.
+Before 2020, language models were small. Then [OpenAI](https://openai.com) published "Language Models are Few-Shot Learners" and the whole point was in one line: they trained GPT-3, a model with 175 billion parameters, ten times larger than any previous dense language model. They scaled all three axes at once: the size of the model, the amount of data, and the compute used to compress that data into the model.
 
 The mechanism is simple to picture. Take all the text you can find on the internet: Common Crawl, torrents, Wikipedia read many times over. Sample a sequence from that corpus. For each sequence you already know the next token (a token is like a word, but not exactly). You feed the previous text (the context, the prompt) into the network and ask it to predict that next token, then push the prediction to be as close as possible to the real one.
 
@@ -31,11 +31,11 @@ ChatGPT was a fine-tuning of GPT-3 to fix exactly those two things: respect conv
 
 ## 2025 to 2026: from model to agent
 
-The jump from ChatGPT to Claude Code is the jump from a model to an agent, and it needs a bit of care.
+The jump from ChatGPT to [Claude](https://claude.ai) Code is the jump from a model to an agent, and it needs a bit of care.
 
 Everything still bottoms out in a string. Whether you send a list of messages, retrieved documents, or tool descriptions, the vendor serializes all of it into one string, feeds it to the model, and gets tokens back one at a time in a loop until the reply is complete. That has not changed since GPT-3. What changes is what we put into the context before we hand it over.
 
-**RAG** was the first thing resembling an agent. Retrieval-augmented generation: instead of sending the prompt straight to the model, you first query a knowledge base (a search engine, a database, a folder of PDFs), pull back relevant chunks, and add that retrieved context to the conversation. The model then answers over the enriched string. It was a big deal in the first year after ChatGPT, though it was already in the literature. This is around when I published the Cheshire Cat, version one. It is essentially a language model plus an additional memory system.
+**RAG** was the first thing resembling an agent. Retrieval-augmented generation: instead of sending the prompt straight to the model, you first query a knowledge base (a search engine, a database, a folder of PDFs), pull back relevant chunks, and add that retrieved context to the conversation. The model then answers over the enriched string. It was a big deal in the first year after ChatGPT, though it was already in the literature. This is around when I published the [Cheshire Cat](https://cheshirecat.ai), version one. It is essentially a language model plus an additional memory system.
 
 **Tools** are the real agentic step. Into the context you serialize a list of functions the model may use: `get_weather(city)`, open the door, write a file, whatever can run on your computer, each with its arguments and a description. The model never calls a function directly. It produces text, a tool call, which is basically a JSON object with the tool name and arguments (`get_weather`, `city=Rome`). The runtime around the model parses that and actually executes the function. So the model decides which function to call and with what arguments; the software runs it and feeds the output back into the context.
 
@@ -43,7 +43,7 @@ Everything still bottoms out in a string. Whether you send a list of messages, r
 
 ## The agentic loop
 
-Put it all together and here is what happens when you type into Claude Code, Codex, or any of these harnesses. First a context-building step (this is what people call context engineering): load the `agents.md`, load the skill descriptions, load the MCP servers and the tools they expose, plus the whole conversation so far. Pass that context to the model. Then ask one question: did the model output a tool call?
+Put it all together and here is what happens when you type into Claude Code, [Codex](https://openai.com/codex), or any of these harnesses. First a context-building step (this is what people call context engineering): load the `agents.md`, load the skill descriptions, load the [MCP](https://modelcontextprotocol.io) servers and the tools they expose, plus the whole conversation so far. Pass that context to the model. Then ask one question: did the model output a tool call?
 
 If yes, the runtime runs the tool (for coding agents these are Unix commands, `glob`, `grep`, `ls`, `bash`, `git`, plus anything you add via MCP servers). The tool's output is appended to the context and the cycle restarts. Coding agents are strong partly because the models were trained to use exactly these Unix commands and were rewarded for it. If the model outputs no more tool calls, it means it has finished (wrote the files, ran the search, produced the report) and returns a final text synthesis to the user. All those dots you see streaming by are tools chosen by the model and executed by the runtime.
 

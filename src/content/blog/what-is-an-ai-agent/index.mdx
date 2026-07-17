@@ -27,7 +27,7 @@ This software mainly takes care of building a prompt. It's not the prompt, that'
 
 Let's start with an example. We want to build an agent that supports the customers of a nice pizzeria. It has to take orders, present the menu, tell you the opening hours, where the pizzeria is, where it delivers. Something you'd normally build a website for. On top of the website, now you also have the option of building an AI agent.
 
-So when you tell the agent, "Do you have the boscaiola? Can I add ham, can I ask for ricotta in the Neapolitan crust?" what you say, the prompt and the conversation up to that point, does not go straight to the neural network, straight to ChatGPT, Llama, Qwen, or whoever. First, the response is handled by the software, by the agent, which internally does have the language model but calls it later. It does things before invoking the language model. You are not talking directly to the neural network.
+So when you tell the agent, "Do you have the boscaiola? Can I add ham, can I ask for ricotta in the Neapolitan crust?" what you say, the prompt and the conversation up to that point, does not go straight to the neural network, straight to [ChatGPT](https://chatgpt.com), [Llama](https://www.llama.com), Qwen, or whoever. First, the response is handled by the software, by the agent, which internally does have the language model but calls it later. It does things before invoking the language model. You are not talking directly to the neural network.
 
 ## Retrieval-augmented generation
 
@@ -47,7 +47,7 @@ That's the memory, the retrieval, retrieval-augmented generation. The other aspe
 
 "I want to order a pizza," or "send the menu to this email." Here a text response isn't enough, because the bot actually has to do something: kick off an order, send an email, update a database. In this case, in the initial prompt, on top of adding context information, we also add, again in the prompt: this is the conversation, this is the context, and you have available a set of operations, so-called tools, which are extremely in fashion right now.
 
-A protocol was even born called MCP, particularly focused on tools and other things, standardizing exactly this part. In the prompt you say: you may use the following operations depending on what the user asks, send email, start order, and there's a list of the operations that can be chosen and the input they require.
+A protocol was even born called [MCP](https://modelcontextprotocol.io), particularly focused on tools and other things, standardizing exactly this part. In the prompt you say: you may use the following operations depending on what the user asks, send email, start order, and there's a list of the operations that can be chosen and the input they require.
 
 When the user, after this whole conversation about the ricotta-crust pizza, says, "Okay, place the order," the language model finds itself with a prompt containing the whole conversation, an informative retrieval text enriched with contextual information, and then this set of tools. Seeing the user say "go ahead, place the order," and seeing the "order pizza" tool in the prompt, it outputs: I want to use the "order pizza" tool with these inputs, pulling from the conversation everything that was ordered and passing it as input.
 
@@ -55,7 +55,7 @@ So the language model always produces a string of text. What changes? This messa
 
 ## Think of it like WordPress
 
-If you like, you can picture it a bit like WordPress. What does WordPress do when you request a page? WordPress has a template, a kind of empty skeleton of the site page, and based on the specific article you request it fills that HTML template with the content and serves it to you. An agent is similar, except instead of filling an HTML template, it has to fill a prompt and interpret the output of the language model to launch actual operations.
+If you like, you can picture it a bit like [WordPress](https://wordpress.org). What does WordPress do when you request a page? WordPress has a template, a kind of empty skeleton of the site page, and based on the specific article you request it fills that HTML template with the content and serves it to you. An agent is similar, except instead of filling an HTML template, it has to fill a prompt and interpret the output of the language model to launch actual operations.
 
 ## The agentic loop
 

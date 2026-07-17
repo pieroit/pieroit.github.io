@@ -21,13 +21,13 @@ This has a double advantage: it saves you tokens and it makes the conversation l
 
 ## 2. Package repetitive flows into skills
 
-Collect repetitive flows into skills, and possibly MCP servers. When you find yourself doing things very often, it's worth packaging them and making them modular, even if you work in a team, so they become skills that can be easily invoked and that carry the accessory context the agent needs to do certain things.
+Collect repetitive flows into skills, and possibly [MCP](https://modelcontextprotocol.io) servers. When you find yourself doing things very often, it's worth packaging them and making them modular, even if you work in a team, so they become skills that can be easily invoked and that carry the accessory context the agent needs to do certain things.
 
 When these flows crystallize even further, turn them into scripts inside the skills. It's not like we have to use the language model for stuff that can be scripted, because it has a very well defined flow. When things crystallize, script it, and the skill just serves as a small wrapper to use conversationally what is ultimately a script with arguments.
 
 ## 3. Don't keep unused MCP servers plugged in
 
-Keep plugged in only the ones strictly necessary. Just loading the GitHub MCP alone gives you dozens of tools that do nothing but fill up the context. You use one once in a blue moon, so turn them on only when you need them, or use git from the command line the way you've done for the last 30 years.
+Keep plugged in only the ones strictly necessary. Just loading the [GitHub](https://github.com) MCP alone gives you dozens of tools that do nothing but fill up the context. You use one once in a blue moon, so turn them on only when you need them, or use git from the command line the way you've done for the last 30 years.
 
 ## 4. Put recurring context in the project file
 
@@ -45,4 +45,4 @@ So when we stand in front of the agent: precise, contextualized questions where 
 
 Use sub-agents, because those get launched separately. They consume tokens, but the tokens don't then become part of the main agent's main flow. So even if you use tokens, the context doesn't fill up too quickly.
 
-In general, folks: good agentic engineering. This time I'll spare you, because a lot of people complained, and I absolutely will not pitch my commercial initiatives. This time I definitely won't. I will not tell you about my new corporate course: Reskill, that's built specifically for technical teams who want to learn to use artificial intelligence professionally for writing and maintaining code. I've already run it several times around Europe, and the feedback is excellent. If you're interested, write to me, tell me whether you want it live or remote, a bit of background, and I'll make you a proposal.
+In general, folks: good agentic engineering. This time I'll spare you, because a lot of people complained, and I absolutely will not pitch my commercial initiatives. This time I definitely won't. I will not tell you about my new corporate course: [Reskill](https://reskill.pieroit.org), that's built specifically for technical teams who want to learn to use artificial intelligence professionally for writing and maintaining code. I've already run it several times around Europe, and the feedback is excellent. If you're interested, write to me, tell me whether you want it live or remote, a bit of background, and I'll make you a proposal.

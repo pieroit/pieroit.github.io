@@ -13,9 +13,9 @@ import VideoEmbed from '@/components/VideoEmbed.astro'
 
 <VideoEmbed url="https://www.youtube.com/embed/M4-_AKV9LEQ" />
 
-Nice one, Simone. So, let's talk about these ChatGPT apps that under the hood are nothing more than MCP servers. We've talked about this a lot in recent months. MCP is a protocol for exposing resources, tools, and prompts.
+Nice one, Simone. So, let's talk about these [ChatGPT](https://chatgpt.com) apps that under the hood are nothing more than [MCP](https://modelcontextprotocol.io) servers. We've talked about this a lot in recent months. MCP is a protocol for exposing resources, tools, and prompts.
 
-If you go into OpenAI's documentation they tell you an app is made of three pieces. But the MCP server is actually the only real piece. The UI widgets, the graphical interface that pops up while you use the app inside ChatGPT (say Google Maps, or the product list) are actually an output of the MCP server. And then they say the third part is the model. That's not true: the model is theirs, and their model, GPT, is the one that decides which resources of your app (which is an MCP server) to use.
+If you go into [OpenAI](https://openai.com)'s documentation they tell you an app is made of three pieces. But the MCP server is actually the only real piece. The UI widgets, the graphical interface that pops up while you use the app inside ChatGPT (say Google Maps, or the product list) are actually an output of the MCP server. And then they say the third part is the model. That's not true: the model is theirs, and their model, GPT, is the one that decides which resources of your app (which is an MCP server) to use.
 
 In some cases these MCP servers can borrow the use of the language model and use it in turn, but the scheme OpenAI drew is app equals MCP server. Even if at first the documentation mixes it up for you, if you actually read it, it's obviously that.
 
@@ -27,7 +27,7 @@ In the MCP server you describe tools: list the products, order a product, go to 
 
 ## MCP is back, A2A is not
 
-MCP is back in the spotlight, having success in lots of different niches. The philosophy behind it, unlike Google's A2A protocol which is having much less success, is different. In the A2A protocol they describe the interaction between agent and agent on the open web, and they don't worry about what's inside the agent. It's communication between agent and agent, possibly agent and person, but the agent is a black box, they don't care what's inside it. You could put an MCP client inside, which in turn calls MCP servers.
+MCP is back in the spotlight, having success in lots of different niches. The philosophy behind it, unlike Google's [A2A](https://a2a-protocol.org) protocol which is having much less success, is different. In the A2A protocol they describe the interaction between agent and agent on the open web, and they don't worry about what's inside the agent. It's communication between agent and agent, possibly agent and person, but the agent is a black box, they don't care what's inside it. You could put an MCP client inside, which in turn calls MCP servers.
 
 I don't want to make it too complicated, but basically MCP is a protocol not so much for artificial intelligence itself. It's a network and integration protocol to expose resources, functions, and prompts. The MCP client, in this case the ChatGPT platform, is where the intelligence sits. MCP centralizes the intelligence, because it doesn't tell you how your agent has to be built, it only tells you how your agent uses resources, and those resources can live on the network.
 
@@ -35,6 +35,6 @@ Obviously OpenAI embraced the protocol because the language model always stays o
 
 ## What about the Cheshire Cat
 
-As for the Cheshire Cat, I'm adding this in. Not all contributors agree, because I asked around, and they're still a bit suspicious of these protocols since they're still unstable, still new. On one hand they're right, but it's also true that MCP has by now established itself and a minimum of support has to be offered. On A2A there are still doubts, even though in my view it's a much more freewheeling protocol, much more open web, and nothing stops you from using MCP servers inside your A2A agent.
+As for the [Cheshire Cat](https://cheshirecat.ai), I'm adding this in. Not all contributors agree, because I asked around, and they're still a bit suspicious of these protocols since they're still unstable, still new. On one hand they're right, but it's also true that MCP has by now established itself and a minimum of support has to be offered. On A2A there are still doubts, even though in my view it's a much more freewheeling protocol, much more open web, and nothing stops you from using MCP servers inside your A2A agent.
 
 What I mean is: do I put it in the Cat, do I put both in, or just MCP, which already works in version 2? Let's do a plugin so that the agents you build in the Cheshire Cat also work in A2A. Drop MCP in the comments if you like MCP. Drop A2A if you like A2A. And write a good loud curse if you like both.

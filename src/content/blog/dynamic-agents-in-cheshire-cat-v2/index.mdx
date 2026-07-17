@@ -21,7 +21,7 @@ Looking at the code, I see simple classes to represent an agent, and these class
 
 Let's start from the system prompt. You do not want your agent to have a static system prompt. You want your agent to rebuild and edit the system prompt at each iteration inside the agentic loop. So the prompt is not really a string. The prompt must be a function returning a string.
 
-The same goes for the language model. You do not want your agent to have one specific model that you constructed beforehand by handing over the API key for OpenAI, or for Anthropic, or whatever. You want primitives inside your agent to select the language model that is right for what the agent is about to do. So there has to be a list of language models, and methods to decide which one must be used at each step to do something. The same goes for the embedders, if you are using embedders.
+The same goes for the language model. You do not want your agent to have one specific model that you constructed beforehand by handing over the API key for [OpenAI](https://openai.com), or for [Anthropic](https://www.anthropic.com), or whatever. You want primitives inside your agent to select the language model that is right for what the agent is about to do. So there has to be a list of language models, and methods to decide which one must be used at each step to do something. The same goes for the embedders, if you are using embedders.
 
 ## Tools and memories should be retrieved, not assigned
 
@@ -31,7 +31,7 @@ So what you want your agent to do is to refine each of those parts, which turn o
 
 ## What's coming in Cheshire Cat v2
 
-Since I maintain an open source framework called the Cheshire Cat, with version two coming at the end of the year, we already had a nice system for tool retrieval and for a dynamic prompt. But in this next version you can have multiple agents, for sure, and when you define an agent you will be able to override these methods so that each part can be dynamic too.
+Since I maintain an open source framework called the [Cheshire Cat](https://cheshirecat.ai), with version two coming at the end of the year, we already had a nice system for tool retrieval and for a dynamic prompt. But in this next version you can have multiple agents, for sure, and when you define an agent you will be able to override these methods so that each part can be dynamic too.
 
 If you just want to use a simple agentic loop to call tools, refine the prompt, maybe plan or whatever, there is a default agent that does that automatically for you. But you can also loop when it is necessary to loop, or go step by step as a workflow when you already know what the agent must do in a specific part of the task.
 

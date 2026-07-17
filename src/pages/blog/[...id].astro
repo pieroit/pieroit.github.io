@@ -3,6 +3,7 @@ import Breadcrumbs from '@/components/Breadcrumbs.astro'
 import Link from '@/components/Link.astro'
 import PostHead from '@/components/PostHead.astro'
 import PostNavigation from '@/components/PostNavigation.astro'
+import RelatedPosts from '@/components/RelatedPosts.astro'
 import TableOfContents from '@/components/TableOfContents.astro'
 import { badgeVariants } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -130,6 +131,8 @@ const authors = await parseAuthors(post.data.authors ?? [])
     <article class="prose col-start-2 max-w-none">
       <Content />
     </article>
+
+    <RelatedPosts postId={currentPostId} count={3} />
 
     <PostNavigation prevPost={prev} nextPost={next} />
   </section>

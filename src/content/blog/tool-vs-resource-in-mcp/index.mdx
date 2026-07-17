@@ -13,7 +13,7 @@ import VideoEmbed from '@/components/VideoEmbed.astro'
 
 <VideoEmbed url="https://www.youtube.com/embed/WX9ZNJPYSCs" />
 
-Hi folks. Our friend Federico writes: "I don't understand the practical difference between a resource and a tool in the MCP protocol, the Model Context Protocol." Let's start with the tool, which is the easier one to grasp. In fact, the MCP servers you see out there are all collections of tools. Few people use resources and prompts, the other two constructs of the server.
+Hi folks. Our friend Federico writes: "I don't understand the practical difference between a resource and a tool in the [MCP](https://modelcontextprotocol.io) protocol, the Model Context Protocol." Let's start with the tool, which is the easier one to grasp. In fact, the MCP servers you see out there are all collections of tools. Few people use resources and prompts, the other two constructs of the server.
 
 ## A tool is a function the model chooses to call
 
@@ -29,7 +29,7 @@ A resource is not a function. It's something you read. There's a resource: it ca
 
 And who chooses which resources to read, and where to put them? Unlike tools, which are strictly there for the language model to use (the tool choice is the model's, but then the tool actually gets launched by your runtime, your software, the MCP client), resources cut across all three constructs. Those three constructs are tools, resources and prompts.
 
-Prompts are simply a collection of prompts. Tools get chosen by the language model. Prompts you typically put in front of the end user of the application, to offer them ready-made prompts they can fire off. The famous prompt libraries, and Claude's latest skills feature, are based on MCP prompts, I believe.
+Prompts are simply a collection of prompts. Tools get chosen by the language model. Prompts you typically put in front of the end user of the application, to offer them ready-made prompts they can fire off. The famous prompt libraries, and [Claude](https://claude.ai)'s latest skills feature, are based on MCP prompts, I believe.
 
 And then there are resources, which are neither chosen by the language model, nor necessarily by the user, nor only by the application running everything. Resources are transversal. If you're building an agent that lets the user upload files, you can treat those as resources. If your application is an agent sitting inside an e-commerce that constantly needs files, things to read, you can treat those as resources. You can even create prompts where you ask the language model to tell you which resources should be read at a given moment. So resources are essentially read-only, and they aren't the exclusive domain of the language model. Resources are a way to move information around among people. I hope that came across.
 
@@ -37,4 +37,4 @@ And then there are resources, which are neither chosen by the language model, no
 
 I can confirm that the Cat version 2, coming out roughly by the end of the year, is heavily based on MCP. There are tools, there are prompts, there are resources, and you'll have an MCP client available directly inside the big Cat: multi-agent, multi-conversation. Writing an agent has become basically four lines of code, and all these constructs, tools, resources, prompts, are dead easy to use, and you can launch them wherever you like.
 
-I can't wait to show you. Right now there's a whole piece that's broken, it needs fixing, but it already works, and I'll update you soon. I'll come back at it, grab a few stars on GitHub. If you want to contribute, to test it, I'll make some tutorial videos too. Let's also see if the core contributors are up for this next journey.
+I can't wait to show you. Right now there's a whole piece that's broken, it needs fixing, but it already works, and I'll update you soon. I'll come back at it, grab a few stars on [GitHub](https://github.com). If you want to contribute, to test it, I'll make some tutorial videos too. Let's also see if the core contributors are up for this next journey.

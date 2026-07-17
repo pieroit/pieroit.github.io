@@ -14,17 +14,17 @@ import VideoEmbed from '@/components/VideoEmbed.astro'
 <VideoEmbed url="https://www.youtube.com/embed/BoJ1EOpFUdI" />
 
 Today we start a creative and technical journey into the world of AI agents and
-MCP. My ongoing mission, as many of you know, is to give my rubber chicken
+[MCP](https://modelcontextprotocol.io). My ongoing mission, as many of you know, is to give my rubber chicken
 sidekick a real consciousness - to turn him into a genuinely intelligent chicken.
 I keep hearing philosophical dualists insisting that machines can't be
 intelligent because human intelligence is somehow superior. In my house,
 machines could well end up smarter than we are, so I want an intelligent
 colleague sitting right there in the chicken's little head.
 
-So let's begin. We're going to build a small agent inside the **Cheshire Cat**
+So let's begin. We're going to build a small agent inside the **[Cheshire Cat](https://cheshirecat.ai)**
 that acts as a daily-planner assistant, has access to the file system, and - most
 importantly - has a **skill system**. I'll show you how skills work from scratch,
-the same kind of skills you find in Claude Code, but built with our own hands on
+the same kind of skills you find in [Claude Code](https://www.anthropic.com/claude-code), but built with our own hands on
 top of **Cheshire Cat 2**.
 
 ## A word on the developer crisis
@@ -57,7 +57,7 @@ you run it _is_ the environment your packages get installed into. They unified t
 environment and the package manager into a handful of commands.
 
 So I make a new folder, call it `pollo-skills`, `cd` into it, and launch my agent -
-Claude, OpenCode, Copilot, Codex, whatever you like. I paste in the prepared
+[Claude](https://claude.ai), [OpenCode](https://opencode.ai), [Copilot](https://github.com/features/copilot), [Codex](https://openai.com/codex), whatever you like. I paste in the prepared
 prompt. It tells the agent to read the documentation, set up the environment with
 UV, and then read the Cheshire Cat API so that it not only installs everything but
 also points itself straight at how to use it. I tell it to go ahead.
@@ -100,8 +100,8 @@ delegates authentication to that identity provider. For quick local work, this f
 provider just wants the machine-to-machine key, which here is simply `miao`. You can
 change that later.
 
-For the language model I use **OpenRouter** (I won't show you my key). In the
-settings you can also pick VLLM, Anthropic, a local Llama, and so on - providers
+For the language model I use **[OpenRouter](https://openrouter.ai)** (I won't show you my key). In the
+settings you can also pick VLLM, [Anthropic](https://www.anthropic.com), a local [Llama](https://www.llama.com), and so on - providers
 are easy to add or remove as plugins. I go hunting for a model. OpenRouter offers a
 huge list now - it's honestly becoming absurd how many there are. After a few slow
 and unresponsive picks (that's the luck of the draw with whichever provider
@@ -363,7 +363,7 @@ to _read_ the file system yet. So we'll need both the skill system and an isolat
 easily navigable file system. That's very much in fashion right now.
 
 This kind of hands-on exercise is exactly what I run in my corporate course,
-**reskill**: two consecutive days where we cover how agents work technically -
+**[reskill](https://reskill.pieroit.org)**: two consecutive days where we cover how agents work technically -
 vibe-coding them from zero in whatever language you like - RAG versus agentic
 search, MCP, skills, and a whole part on updating professional skills around vibe
 coding, agentic engineering, and spec-driven development. It's aimed at companies;
