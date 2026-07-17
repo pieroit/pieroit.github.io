@@ -1,6 +1,7 @@
 CLAUDE.md
 .claude
 
+/dist
 /docs
 .astro/
 node_modules/

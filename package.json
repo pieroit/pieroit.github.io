@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build && cp CNAME docs/ && touch docs/.nojekyll",
+    "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "prettier": "prettier --write **/*.{ts,tsx,css,astro} --ignore-path .gitignore",

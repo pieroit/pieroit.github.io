@@ -21,7 +21,6 @@ import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  outDir: './docs',
   site: 'https://pieroit.org',
   integrations: [
     expressiveCode({
